@@ -2,4 +2,5 @@
 .venv/
 
 # Ignore test caches
-/tests/__pycache__
+tests/__pycache__
+src/__pycache__

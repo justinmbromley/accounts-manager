@@ -1,4 +1,5 @@
 import pytest
+from datetime import time
 from src.account import Account
 
 # Tests both the struct and the getters
@@ -12,7 +13,7 @@ class TestAccountStruct():
             "Password: b0bby5m1TH",
             "Secret Question: Name of your first crush?"
         ]
-        account_time_last_edited = 4321
+        account_time_last_edited = time(12, 0)
 
         account = Account(account_id, account_name, account_details, account_time_last_edited)
 
@@ -29,7 +30,7 @@ class TestAccountStruct():
             "Password: b0bby5m1TH",
             "Secret Question: Name of your first crush?"
         ]
-        account_time_last_edited = 4321
+        account_time_last_edited = time(12, 0)
 
 
         with pytest.raises(TypeError):
@@ -43,7 +44,7 @@ class TestAccountStruct():
             "Password: b0bby5m1TH",
             "Secret Question: Name of your first crush?"
         ]
-        account_time_last_edited = 4321
+        account_time_last_edited = time(12, 0)
 
 
         with pytest.raises(TypeError):
@@ -53,12 +54,12 @@ class TestAccountStruct():
         account_id = 123
         account_name = "Gmail"
         account_details = "Email: bobbysmith@gmail.com"
-        account_time_last_edited = 4321
+        account_time_last_edited = time(12, 0)
 
         with pytest.raises(TypeError):
             account = Account(account_id, account_name, account_details, account_time_last_edited)
 
-    def test_wrong_type_account_(self):
+    def test_wrong_type_account_time_last_edited(self):
         account_id = 123
         account_name = "Gmail"
         account_details = [
