@@ -32,7 +32,6 @@ class TestAccountStruct():
         ]
         account_time_last_edited = time(12, 0)
 
-
         with pytest.raises(TypeError):
             account = Account(account_id, account_name, account_details, account_time_last_edited)
         
@@ -45,7 +44,6 @@ class TestAccountStruct():
             "Secret Question: Name of your first crush?"
         ]
         account_time_last_edited = time(12, 0)
-
 
         with pytest.raises(TypeError):
             account = Account(account_id, account_name, account_details, account_time_last_edited)
