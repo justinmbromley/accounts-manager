@@ -33,4 +33,12 @@ class AccountsManager:
         self._conn.commit()
 
     def am_get_account(self, account_id: int) -> Optional[Account]:
-        return None
+        cursor = self._conn.cursor()
+        cursor.execute(f"SELECT * FROM {TABLE_NAME} WHERE account_id == ?", (account_id,))
+        result = cursor.fetchone()
+
+        if result is None:
+            return None
+        else:
+            return Account(result[0], result[1], json.loads(result[2]), result[3])
+

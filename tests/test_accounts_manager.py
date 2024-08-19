@@ -2,7 +2,6 @@ from src.accounts_manager import AccountsManager
 from constants import TABLE_NAME
 import sqlite3
 import json
-import pytest
 
 class TestAccountsManager:
     def test_am_add_account_working(self):
