@@ -96,7 +96,7 @@ class TestAccountsManager:
         new_account_name = "Dentist"
         am.am_update_account_name(account_id, new_account_name)
 
-        assert am.am_get_account(3).account_name == new_account_name
+        assert am.am_get_account(account_id).account_name == new_account_name
         
         # finish
         cursor.execute(f'''DROP TABLE {TABLE_NAME}''')
