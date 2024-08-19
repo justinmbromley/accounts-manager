@@ -64,3 +64,8 @@ class AccountsManager:
         cursor = self._conn.cursor()
         cursor.execute(f"UPDATE {TABLE_NAME} SET account_details = ? WHERE account_id = ?", (json.dumps(new_account_name), account_id))
         self._conn.commit()
+
+    def am_delete_account(self, account_id: int):
+        cursor = self._conn.cursor()
+        cursor.execute(f"DELETE FROM {TABLE_NAME} WHERE account_id = ?", (account_id,))
+        self._conn.commit()
