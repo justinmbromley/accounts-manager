@@ -181,7 +181,6 @@ class TestAccountsManager:
         am.am_add_account("Walmart", ["Email: juryrigg@outlook.com", "Password: theGREATWALL", "Secret Question: What is the meaning of it all?"])
 
         account_id = 3
-        new_account_details = ["Email: thedoonsquad4@dentist.com", "Address: 14 Graham Avenue"]
         am.am_delete_account(account_id)
 
         assert am.am_get_account(account_id) is None
