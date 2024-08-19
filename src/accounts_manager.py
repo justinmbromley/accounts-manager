@@ -41,9 +41,20 @@ class AccountsManager:
             return None
         else:
             return Account(result[0], result[1], json.loads(result[2]), result[3])
+        
+    def am_get_accounts_by_name(self, account_name: str) -> Optional[List[str]]:
+        cursor = self._conn.cursor()
+        cursor.execute(f"SELECT * FROM {TABLE_NAME} WHERE account_name == ?", (account_name, ))
+        result = cursor.fetchall()
+
+        if not result:
+            return None
+        else:
+            accounts = []
+            for row in result:
+                accounts.append(Account(row[0], row[1], json.loads(row[2]), row[3]))
+            return accounts
 
     def am_update_account_name(self, account_id: int, new_account_name: str):
         cursor = self._conn.cursor()
         cursor.execute(f"UPDATE {TABLE_NAME} SET account_name = ? WHERE account_id = ?", (new_account_name, account_id))
-    
-    
