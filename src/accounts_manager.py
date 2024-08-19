@@ -59,5 +59,6 @@ class AccountsManager:
         cursor = self._conn.cursor()
         cursor.execute(f"UPDATE {TABLE_NAME} SET account_name = ? WHERE account_id = ?", (new_account_name, account_id))
 
-    def am_update_account_details(self, account_id: int, new_account_name: str):
-        return None
+    def am_update_account_details(self, account_id: int, new_account_name: List[str]):
+        cursor = self._conn.cursor()
+        cursor.execute(f"UPDATE {TABLE_NAME} SET account_details = ? WHERE account_id = ?", (json.dumps(new_account_name), account_id))
