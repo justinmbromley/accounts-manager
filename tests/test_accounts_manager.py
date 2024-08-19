@@ -128,7 +128,7 @@ class TestAccountsManager:
         conn.commit()
         conn.close()
 
-    def test_am_update_account_working(self):
+    def test_am_update_account_name_working(self):
         conn = sqlite3.connect(':memory:')
         cursor = conn.cursor()
         am = AccountsManager(conn)
@@ -149,7 +149,7 @@ class TestAccountsManager:
         conn.commit()
         conn.close()
 
-    def test_am_update_account_working(self):
+    def test_am_update_account_details_working(self):
         conn = sqlite3.connect(':memory:')
         cursor = conn.cursor()
         am = AccountsManager(conn)
