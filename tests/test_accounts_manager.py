@@ -128,7 +128,7 @@ class TestAccountsManager:
         conn.commit()
         conn.close()
 
-    def test_am_update_account_working(self):
+    def test_am_update_account_name_working(self):
         conn = sqlite3.connect(':memory:')
         cursor = conn.cursor()
         am = AccountsManager(conn)
@@ -149,3 +149,23 @@ class TestAccountsManager:
         conn.commit()
         conn.close()
 
+    def test_am_update_account_details_working(self):
+        conn = sqlite3.connect(':memory:')
+        cursor = conn.cursor()
+        am = AccountsManager(conn)
+
+        am.am_add_account("Gmail", ["Email: bobbysmith@gmail.com", "Password: b0bby5m1TH", "Secret Question: Name of your first crush?"])
+        am.am_add_account("Bank", ["Bank Code: 1459", "Email: josephbanks@outlook.com", "Password: epicawesome", "Secret Words: hello i have no cool"])
+        am.am_add_account("Gmail", ["Email: rogerboger@gmail.com", "Password: ther4alONE"])
+        am.am_add_account("Walmart", ["Email: juryrigg@outlook.com", "Password: theGREATWALL", "Secret Question: What is the meaning of it all?"])
+
+        account_id = 3
+        new_account_details = ["Email: thedoonsquad4@dentist.com", "Address: 14 Graham Avenue"]
+        am.am_update_account_details(account_id, new_account_details)
+
+        assert am.am_get_account(account_id).account_details == new_account_details
+        
+        # finish
+        cursor.execute(f'''DROP TABLE {TABLE_NAME}''')
+        conn.commit()
+        conn.close()
