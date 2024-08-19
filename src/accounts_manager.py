@@ -55,6 +55,9 @@ class AccountsManager:
                 accounts.append(Account(row[0], row[1], json.loads(row[2]), row[3]))
             return accounts
 
+    def am_get_accounts(self) -> List[Account]:
+        return None
+
     def am_update_account_name(self, account_id: int, new_account_name: str):
         cursor = self._conn.cursor()
         cursor.execute(f"UPDATE {TABLE_NAME} SET account_name = ? WHERE account_id = ?", (new_account_name, account_id))
