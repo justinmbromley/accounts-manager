@@ -145,7 +145,10 @@ class TestAccountsManager:
         am.am_add_account(accounts_expected[2].account_name, accounts_expected[2].account_details)
         am.am_add_account(accounts_expected[3].account_name, accounts_expected[3].account_details)
 
-        assert am.am_get_accounts == accounts_expected
+        accounts_result = am.am_get_accounts()
+
+        for i in range(len(accounts_expected)):
+            assert accounts_expected[i] == accounts_result[i]
 
         # finish
         cursor.execute(f'''DROP TABLE {TABLE_NAME}''')
