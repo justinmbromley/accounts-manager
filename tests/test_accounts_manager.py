@@ -1,12 +1,11 @@
-from db_name import db_name
-from datetime import time
 from src.accounts_manager import AccountsManager
+from constants import TABLE_NAME
 import sqlite3
 import json
 
 class TestAccountsManager:
     def test_am_add_account_working(self):
-        conn = sqlite3.connect('test.db')
+        conn = sqlite3.connect(':memory:')
         am = AccountsManager(conn)
 
         account_name = "Gmail"
@@ -20,21 +19,20 @@ class TestAccountsManager:
 
         cursor = conn.cursor()
         cursor.execute(
-            '''
+            f'''
             SELECT * 
-            FROM accounts
+            FROM {TABLE_NAME}
             WHERE account_name = ?
             AND account_details = ?
-            ''', (account_name, str(account_details))
+            ''', (account_name, json.dumps(account_details))
         )
-
         result = cursor.fetchone()
 
-        cursor.execute('''DROP TABLE accounts''')
+        cursor.execute(f'''DROP TABLE {TABLE_NAME}''')
         conn.commit()
         conn.close()
 
         assert result is not None, "Account not found in the database"
         assert result[1] == account_name, "Account name does not match"
-        assert result[2] == str(account_details), "Account details do not match"
+        assert result[2] == json.dumps(account_details), "Account details do not match"
 

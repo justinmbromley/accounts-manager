@@ -3,7 +3,7 @@ from src.account import Account
 
 
 # Tests both the struct and the getters
-class TestAccountStruct():
+class TestAccount():
 
     def test_getters_working(self):
         account_id = 123
