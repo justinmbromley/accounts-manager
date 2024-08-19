@@ -10,6 +10,9 @@ class Account:
         self._account_details = account_details
         self._account_time_last_edited = account_time_last_edited
 
+    def __eq__(self, other) -> bool:
+        return None
+
     @property
     def account_id(self):
         return self._account_id
