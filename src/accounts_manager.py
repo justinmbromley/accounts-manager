@@ -66,4 +66,6 @@ class AccountsManager:
         self._conn.commit()
 
     def am_delete_account(self, account_id: int):
-        return None
+        cursor = self._conn.cursor()
+        cursor.execute(f"DELETE FROM {TABLE_NAME} WHERE account_id = ?", (account_id,))
+        self._conn.commit()
