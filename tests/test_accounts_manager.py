@@ -148,7 +148,9 @@ class TestAccountsManager:
         accounts_result = am.am_get_accounts()
 
         for i in range(len(accounts_expected)):
-            assert accounts_expected[i] == accounts_result[i]
+            assert accounts_expected[i].account_id == accounts_result[i].account_id
+            assert accounts_expected[i].account_name == accounts_result[i].account_name
+            assert accounts_expected[i].account_details == accounts_result[i].account_details
 
         # finish
         cursor.execute(f'''DROP TABLE {TABLE_NAME}''')

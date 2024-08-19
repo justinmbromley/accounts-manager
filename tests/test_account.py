@@ -49,16 +49,3 @@ class TestAccount():
         assert account_1.account_name == account_name
         assert account_1.account_details == account_details
         assert account_1.account_time_last_edited == account_time_last_edited
-
-    def test_equals_true(self):
-        account_1 = Account(1, "Gmail", ["Email: bobbysmith@gmail.com", "Password: b0bby5m1TH", "Secret Question: Name of your first crush?"], 0)
-        account_2 = account_1
-
-        assert account_1 == account_2
-
-
-    def test_equals_false(self):
-        account_1 = Account(1, "Gmail", ["Email: bobbysmith@gmail.com", "Password: b0bby5m1TH", "Secret Question: Name of your first crush?"], 0)
-        account_2 = Account(2, "Bank", ["Bank Code: 1459", "Email: josephbanks@outlook.com", "Password: epicawesome", "Secret Words: hello i have no cool"], 1)
-
-        assert account_1 != account_2
