@@ -42,3 +42,5 @@ class AccountsManager:
         else:
             return Account(result[0], result[1], json.loads(result[2]), result[3])
 
+    def am_update_account_name(self, account_id: int, new_account_name: str):
+        return None

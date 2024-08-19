@@ -81,3 +81,25 @@ class TestAccountsManager:
         conn.close()
 
         assert account is None, "Account unexpectedly found"
+
+    def test_am_update_account_working(self):
+        conn = sqlite3.connect(':memory:')
+        cursor = conn.cursor()
+        am = AccountsManager(conn)
+
+        am.am_add_account("Gmail", ["Email: bobbysmith@gmail.com", "Password: b0bby5m1TH", "Secret Question: Name of your first crush?"])
+        am.am_add_account("Bank", ["Bank Code: 1459", "Email: josephbanks@outlook.com", "Password: epicawesome", "Secret Words: hello i have no cool"])
+        am.am_add_account("Gmail", ["Email: rogerboger@gmail.com", "Password: ther4alONE"])
+        am.am_add_account("Walmart", ["Email: juryrigg@outlook.com", "Password: theGREATWALL", "Secret Question: What is the meaning of it all?"])
+
+        account_id = 3
+        new_account_name = "Dentist"
+        am.am_update_account_name(account_id, new_account_name)
+
+        assert am.am_get_account(3).account_name == new_account_name
+        
+        # finish
+        cursor.execute(f'''DROP TABLE {TABLE_NAME}''')
+        conn.commit()
+        conn.close()
+
