@@ -128,6 +128,35 @@ class TestAccountsManager:
         conn.commit()
         conn.close()
 
+    def test_am_get_accounts_working(self):
+        conn = sqlite3.connect(':memory:')
+        cursor = conn.cursor()
+        am = AccountsManager(conn)
+
+        accounts_expected = [
+            Account(1, "Gmail", ["Email: bobbysmith@gmail.com", "Password: b0bby5m1TH", "Secret Question: Name of your first crush?"], 0),
+            Account(2, "Bank", ["Bank Code: 1459", "Email: josephbanks@outlook.com", "Password: epicawesome", "Secret Words: hello i have no cool"], 0),
+            Account(3, "Gmail", ["Email: rogerboger@gmail.com", "Password: ther4alONE"], 0),
+            Account(4, "Walmart", ["Email: juryrigg@outlook.com", "Password: theGREATWALL", "Secret Question: What is the meaning of it all?"], 0)
+        ]
+
+        am.am_add_account(accounts_expected[0].account_name, accounts_expected[0].account_details)
+        am.am_add_account(accounts_expected[1].account_name, accounts_expected[1].account_details)
+        am.am_add_account(accounts_expected[2].account_name, accounts_expected[2].account_details)
+        am.am_add_account(accounts_expected[3].account_name, accounts_expected[3].account_details)
+
+        accounts_result = am.am_get_accounts()
+
+        for i in range(len(accounts_expected)):
+            assert accounts_expected[i].account_id == accounts_result[i].account_id
+            assert accounts_expected[i].account_name == accounts_result[i].account_name
+            assert accounts_expected[i].account_details == accounts_result[i].account_details
+
+        # finish
+        cursor.execute(f'''DROP TABLE {TABLE_NAME}''')
+        conn.commit()
+        conn.close()
+
     def test_am_update_account_name_working(self):
         conn = sqlite3.connect(':memory:')
         cursor = conn.cursor()
