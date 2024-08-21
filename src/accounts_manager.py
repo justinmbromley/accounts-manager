@@ -42,7 +42,7 @@ class AccountsManager:
         else:
             return Account(result[0], result[1], json.loads(result[2]), result[3])
         
-    def am_get_accounts_by_name(self, account_name: str) -> Optional[List[str]]:
+    def am_get_accounts_by_name(self, account_name: str) -> Optional[List[Account]]:
         cursor = self._conn.cursor()
         cursor.execute(f"SELECT * FROM {TABLE_NAME} WHERE account_name == ?", (account_name, ))
         result = cursor.fetchall()
@@ -70,9 +70,9 @@ class AccountsManager:
         cursor.execute(f"UPDATE {TABLE_NAME} SET account_name = ? WHERE account_id = ?", (new_account_name, account_id))
         self._conn.commit()
 
-    def am_update_account_details(self, account_id: int, new_account_name: List[str]):
+    def am_update_account_details(self, account_id: int, new_account_details: List[str]):
         cursor = self._conn.cursor()
-        cursor.execute(f"UPDATE {TABLE_NAME} SET account_details = ? WHERE account_id = ?", (json.dumps(new_account_name), account_id))
+        cursor.execute(f"UPDATE {TABLE_NAME} SET account_details = ? WHERE account_id = ?", (json.dumps(new_account_details), account_id))
         self._conn.commit()
 
     def am_delete_account(self, account_id: int):
