@@ -1,3 +1,5 @@
+
+
 name: CI
 
 on: [push, pull_request]
@@ -7,26 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
+    - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.10.12'
-
+        python-version: 3.9.19
+    - name: Install Poetry
+      run: curl -sSL https://install.python-poetry.org | python3 -
     - name: Install dependencies
-      run: |
-        python -m venv venv
-        source venv/bin/activate
-        pip install -r requirements.txt
-
-    - name: Run lint
-      run: |
-        source venv/bin/activate
-        invoke lint
-
+      run: poetry install
     - name: Run tests
-      run: |
-        source venv/bin/activate
-        invoke test
+      run: poetry run test
+    - name: Lint code
+      run: poetry run lint
