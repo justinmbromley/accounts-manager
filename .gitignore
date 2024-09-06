@@ -1,6 +1,5 @@
-# Ignore virtual environment
-.venv/
-
+__pycache__
+nothing
 # Ignore test caches
 tests/__pycache__
 src/__pycache__
