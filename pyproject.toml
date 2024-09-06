@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "accounts-manager"
+version = "1.0.0"
+description = "An application for managing log ins and information about different accounts"
+authors = ["Justin Bromley <justinmbromley@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.9.19"
+PyQt6 = "^6.7.1"
+pytest = "^8.3.2"
+ruff = "^0.6.4"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+ruff = "^0.6.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+test = "run_tasks:run_tests"
+test_short = "run_tasks:run_tests_short"
+lint = "run_tasks:run_lint"
+lint_fix =  "run_tasks:run_lint_fix"
