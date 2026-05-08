@@ -1,0 +1,39 @@
+Start testing: May 07 11:15 AEST
+----------------------------------------------------------
+1/1 Testing: test_account
+1/1 Test: test_account
+Command: "/home/bromastone/code/accounts-manager/build/tests/core/test_account"
+Directory: /home/bromastone/code/accounts-manager/build/tests/core
+"test_account" start time: May 07 11:15 AEST
+Output:
+----------------------------------------------------------
+********* Start testing of AccountTest *********
+Config: Using QtTest library 6.11.0, Qt 6.11.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 15.2.1 20260209), arch unknown
+PASS   : AccountTest::initTestCase()
+PASS   : AccountTest::dummy()
+FAIL!  : AccountTest::create_account_with_credentials_test() Compared values are not the same
+   Actual   (account.name()): ""
+   Expected (name)          : "Gmail"
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(46)]
+FAIL!  : AccountTest::create_account_without_credentials_test() Compared values are not the same
+   Actual   (account.name()): ""
+   Expected (name)          : "Gmail"
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(61)]
+FAIL!  : AccountTest::create_account_time_test() 'account.created_at().isValid()' returned FALSE. ()
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(72)]
+FAIL!  : AccountTest::update_name_test() 'account.updated_at() > updated_before' returned FALSE. ()
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(84)]
+FAIL!  : AccountTest::update_credentials_test() 'account.updated_at() > updated_before' returned FALSE. ()
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(114)]
+PASS   : AccountTest::cleanupTestCase()
+Totals: 3 passed, 5 failed, 0 skipped, 0 blacklisted, 11ms
+********* Finished testing of AccountTest *********
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"test_account" end time: May 07 11:15 AEST
+"test_account" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 07 11:15 AEST

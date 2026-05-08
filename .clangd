@@ -1,0 +1,7 @@
+CompileFlags:
+  Compiler: /usr/bin/g++
+  Remove: [-mno-direct-extern-access]
+  Add: [-std=gnu++20]
+
+Diagnostics:
+  UnusedIncludes: Strict
