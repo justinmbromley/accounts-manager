@@ -1,10 +1,10 @@
-Start testing: May 07 11:15 AEST
+Start testing: May 08 17:12 AEST
 ----------------------------------------------------------
 1/1 Testing: test_account
 1/1 Test: test_account
 Command: "/home/bromastone/code/accounts-manager/build/tests/core/test_account"
 Directory: /home/bromastone/code/accounts-manager/build/tests/core
-"test_account" start time: May 07 11:15 AEST
+"test_account" start time: May 08 17:12 AEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of AccountTest *********
@@ -14,17 +14,17 @@ PASS   : AccountTest::dummy()
 FAIL!  : AccountTest::create_account_with_credentials_test() Compared values are not the same
    Actual   (account.name()): ""
    Expected (name)          : "Gmail"
-   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(46)]
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(43)]
 FAIL!  : AccountTest::create_account_without_credentials_test() Compared values are not the same
    Actual   (account.name()): ""
    Expected (name)          : "Gmail"
-   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(61)]
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(58)]
 FAIL!  : AccountTest::create_account_time_test() 'account.created_at().isValid()' returned FALSE. ()
-   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(72)]
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(69)]
 FAIL!  : AccountTest::update_name_test() 'account.updated_at() > updated_before' returned FALSE. ()
-   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(84)]
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(81)]
 FAIL!  : AccountTest::update_credentials_test() 'account.updated_at() > updated_before' returned FALSE. ()
-   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(114)]
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_test.cpp(110)]
 PASS   : AccountTest::cleanupTestCase()
 Totals: 3 passed, 5 failed, 0 skipped, 0 blacklisted, 11ms
 ********* Finished testing of AccountTest *********
@@ -32,8 +32,8 @@ Totals: 3 passed, 5 failed, 0 skipped, 0 blacklisted, 11ms
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Failed.
-"test_account" end time: May 07 11:15 AEST
+"test_account" end time: May 08 17:12 AEST
 "test_account" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: May 07 11:15 AEST
+End testing: May 08 17:12 AEST

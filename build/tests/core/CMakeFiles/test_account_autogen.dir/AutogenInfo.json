@@ -160,7 +160,7 @@
 	"PARALLEL" : 4,
 	"PARSE_CACHE_FILE" : "/home/bromastone/code/accounts-manager/build/tests/core/CMakeFiles/test_account_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt6/moc",
-	"QT_UIC_EXECUTABLE" : "/usr/lib/qt6/uic",
+	"QT_UIC_EXECUTABLE" : "",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 11,
 	"SETTINGS_FILE" : "/home/bromastone/code/accounts-manager/build/tests/core/CMakeFiles/test_account_autogen.dir/AutogenUsed.txt",
