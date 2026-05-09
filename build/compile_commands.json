@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/bromastone/code/accounts-manager/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/bromastone/code/accounts-manager/build/src/core/accounts_core_autogen/include -I/home/bromastone/code/accounts-manager/src/core -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -std=gnu++20 -mno-direct-extern-access -o src/core/CMakeFiles/accounts_core.dir/accounts_core_autogen/mocs_compilation.cpp.o -c /home/bromastone/code/accounts-manager/build/src/core/accounts_core_autogen/mocs_compilation.cpp",
+  "file": "/home/bromastone/code/accounts-manager/build/src/core/accounts_core_autogen/mocs_compilation.cpp",
+  "output": "/home/bromastone/code/accounts-manager/build/src/core/CMakeFiles/accounts_core.dir/accounts_core_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/bromastone/code/accounts-manager/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/bromastone/code/accounts-manager/build/src/core/accounts_core_autogen/include -I/home/bromastone/code/accounts-manager/src/core -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -std=gnu++20 -mno-direct-extern-access -o src/core/CMakeFiles/accounts_core.dir/Account.cpp.o -c /home/bromastone/code/accounts-manager/src/core/Account.cpp",
+  "file": "/home/bromastone/code/accounts-manager/src/core/Account.cpp",
+  "output": "/home/bromastone/code/accounts-manager/build/src/core/CMakeFiles/accounts_core.dir/Account.cpp.o"
+},
+{
+  "directory": "/home/bromastone/code/accounts-manager/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -DQT_TESTCASE_BUILDDIR=\\\"/home/bromastone/code/accounts-manager/build/tests/core\\\" -DQT_TESTCASE_SOURCEDIR=\\\"/home/bromastone/code/accounts-manager/tests/core\\\" -DQT_TESTLIB_LIB -I/home/bromastone/code/accounts-manager/build/tests/core/test_account_autogen/include -I/home/bromastone/code/accounts-manager/src/core -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtTest -std=gnu++20 -mno-direct-extern-access -o tests/core/CMakeFiles/test_account.dir/test_account_autogen/mocs_compilation.cpp.o -c /home/bromastone/code/accounts-manager/build/tests/core/test_account_autogen/mocs_compilation.cpp",
+  "file": "/home/bromastone/code/accounts-manager/build/tests/core/test_account_autogen/mocs_compilation.cpp",
+  "output": "/home/bromastone/code/accounts-manager/build/tests/core/CMakeFiles/test_account.dir/test_account_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/bromastone/code/accounts-manager/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -DQT_TESTCASE_BUILDDIR=\\\"/home/bromastone/code/accounts-manager/build/tests/core\\\" -DQT_TESTCASE_SOURCEDIR=\\\"/home/bromastone/code/accounts-manager/tests/core\\\" -DQT_TESTLIB_LIB -I/home/bromastone/code/accounts-manager/build/tests/core/test_account_autogen/include -I/home/bromastone/code/accounts-manager/src/core -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtTest -std=gnu++20 -mno-direct-extern-access -o tests/core/CMakeFiles/test_account.dir/account_test.cpp.o -c /home/bromastone/code/accounts-manager/tests/core/account_test.cpp",
+  "file": "/home/bromastone/code/accounts-manager/tests/core/account_test.cpp",
+  "output": "/home/bromastone/code/accounts-manager/build/tests/core/CMakeFiles/test_account.dir/account_test.cpp.o"
+}
+]

@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/bromastone/code/accounts-manager/build/cmake_install.cmake",
+		"/home/bromastone/code/accounts-manager/build/src/cmake_install.cmake",
+		"/home/bromastone/code/accounts-manager/build/src/core/cmake_install.cmake",
+		"/home/bromastone/code/accounts-manager/build/tests/cmake_install.cmake",
+		"/home/bromastone/code/accounts-manager/build/tests/core/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
