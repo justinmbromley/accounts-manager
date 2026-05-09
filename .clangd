@@ -3,5 +3,14 @@ CompileFlags:
   Remove: [-mno-direct-extern-access]
   Add: [-std=gnu++20]
 
+Index:
+  StandardLibrary: Yes
+
+Completion:
+  AllScopes: Yes
+
+InlayHints:
+  Enabled: Yes
+
 Diagnostics:
   UnusedIncludes: Strict

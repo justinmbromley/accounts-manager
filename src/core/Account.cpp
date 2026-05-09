@@ -1,16 +1,35 @@
 #include "Account.h"
 
+#include <QDateTime>
+#include <QUuid>
+
 namespace core {
 
 // Constructors
-Account::Account(QString name) {}
+Account::Account(QString name) :
+    id_(QUuid::createUuid()),
+    name_(std::move(name)),
+    credentials_(),
+    time_created_(QDateTime::currentDateTimeUtc()),
+    time_updated_(time_created_) {}
 
-Account::Account(QString name, std::vector<Credential> credentials) {}
+Account::Account(QString name, std::vector<Credential> credentials) :
+    id_(QUuid::createUuid()),
+    name_(std::move(name)),
+    credentials_(credentials),
+    time_created_(QDateTime::currentDateTimeUtc()),
+    time_updated_(time_created_) {}
 
 // Methods
-void Account::update_name(const QString& name) {}
+void Account::update_name(const QString& name) {
+    name_ = name;
+    time_updated_ = QDateTime::currentDateTimeUtc();
+}
 
-void Account::update_credentials(const std::vector<Credential>& credentials) {}
+void Account::update_credentials(const std::vector<Credential>& credentials) {
+    credentials_ = credentials;
+    time_updated_ = QDateTime::currentDateTimeUtc();
+}
 
 // Getters
 const QString& Account::name() const noexcept { return name_; }
