@@ -16,7 +16,7 @@ Account::Account(QString name) :
 Account::Account(QString name, std::vector<Credential> credentials) :
     id_(QUuid::createUuid()),
     name_(std::move(name)),
-    credentials_(credentials),
+    credentials_(std::move(credentials)),
     time_created_(QDateTime::currentDateTimeUtc()),
     time_updated_(time_created_) {}
 

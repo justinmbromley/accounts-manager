@@ -52,3 +52,10 @@
 52	2580	1778291482650417376	src/core/CMakeFiles/accounts_core.dir/Account.cpp.o	d7dd9a1414c22496
 2580	2619	1778291485178417292	src/core/libaccounts_core.a	3f3ff58b32d01ea5
 2619	2776	1778291485217417291	tests/core/test_account	a31e521c4473c8b8
+4	55	1778291648409411859	src/core/accounts_core_autogen/timestamp	74dd9fad7c3f1324
+4	55	1778291648409411859	src/core/accounts_core_autogen/mocs_compilation.cpp	74dd9fad7c3f1324
+4	55	1778291648409411859	/home/bromastone/code/accounts-manager/build/src/core/accounts_core_autogen/timestamp	74dd9fad7c3f1324
+4	55	1778291648409411859	/home/bromastone/code/accounts-manager/build/src/core/accounts_core_autogen/mocs_compilation.cpp	74dd9fad7c3f1324
+55	2605	1778291648461411858	src/core/CMakeFiles/accounts_core.dir/Account.cpp.o	d7dd9a1414c22496
+2605	2645	1778291651010411773	src/core/libaccounts_core.a	3f3ff58b32d01ea5
+2645	2806	1778291651050411772	tests/core/test_account	a31e521c4473c8b8
