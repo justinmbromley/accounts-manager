@@ -11,17 +11,23 @@ Account::Account(QString name) :
     name_(std::move(name)),
     credentials_(),
     time_created_(QDateTime::currentDateTimeUtc()),
-    time_updated_(time_created_) {}
+    time_updated_(time_created_) {
+    Q_ASSERT(!name_.isEmpty());
+}
 
 Account::Account(QString name, std::vector<Credential> credentials) :
     id_(QUuid::createUuid()),
     name_(std::move(name)),
     credentials_(std::move(credentials)),
     time_created_(QDateTime::currentDateTimeUtc()),
-    time_updated_(time_created_) {}
+    time_updated_(time_created_) {
+    Q_ASSERT(!name_.isEmpty());
+}
 
 // Methods
 void Account::update_name(const QString& name) {
+    Q_ASSERT(!name.isEmpty());
+
     name_ = name;
     time_updated_ = QDateTime::currentDateTimeUtc();
 }
