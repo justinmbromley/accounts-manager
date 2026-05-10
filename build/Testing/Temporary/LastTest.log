@@ -1,14 +1,14 @@
-Start testing: May 09 11:54 AEST
+Start testing: May 11 09:56 AEST
 ----------------------------------------------------------
 1/1 Testing: test_account
 1/1 Test: test_account
 Command: "/home/bromastone/code/accounts-manager/build/tests/core/test_account"
 Directory: /home/bromastone/code/accounts-manager/build/tests/core
-"test_account" start time: May 09 11:54 AEST
+"test_account" start time: May 11 09:56 AEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of AccountTest *********
-Config: Using QtTest library 6.11.0, Qt 6.11.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 15.2.1 20260209), arch unknown
+Config: Using QtTest library 6.11.0, Qt 6.11.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.1.1 20260430), arch unknown
 PASS   : AccountTest::initTestCase()
 PASS   : AccountTest::dummy()
 PASS   : AccountTest::create_account_with_credentials_test()
@@ -23,8 +23,8 @@ Totals: 8 passed, 0 failed, 0 skipped, 0 blacklisted, 11ms
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"test_account" end time: May 09 11:54 AEST
+"test_account" end time: May 11 09:56 AEST
 "test_account" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: May 09 11:54 AEST
+End testing: May 11 09:56 AEST
