@@ -5,6 +5,8 @@ add_library(accounts_core
     Account.h
     AccountSummary.cpp
     AccountSummary.h
+    AccountService.cpp
+    AccountService.h
     Credential.h
     CredentialType.h
 )
