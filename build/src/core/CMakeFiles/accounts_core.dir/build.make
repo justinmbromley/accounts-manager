@@ -100,19 +100,35 @@ src/core/CMakeFiles/accounts_core.dir/Account.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/accounts_core.dir/Account.cpp.s"
 	cd /home/bromastone/code/accounts-manager/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bromastone/code/accounts-manager/src/core/Account.cpp -o CMakeFiles/accounts_core.dir/Account.cpp.s
 
+src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.o: src/core/CMakeFiles/accounts_core.dir/flags.make
+src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.o: /home/bromastone/code/accounts-manager/src/core/AccountSummary.cpp
+src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.o: src/core/CMakeFiles/accounts_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bromastone/code/accounts-manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.o"
+	cd /home/bromastone/code/accounts-manager/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.o -MF CMakeFiles/accounts_core.dir/AccountSummary.cpp.o.d -o CMakeFiles/accounts_core.dir/AccountSummary.cpp.o -c /home/bromastone/code/accounts-manager/src/core/AccountSummary.cpp
+
+src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/accounts_core.dir/AccountSummary.cpp.i"
+	cd /home/bromastone/code/accounts-manager/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bromastone/code/accounts-manager/src/core/AccountSummary.cpp > CMakeFiles/accounts_core.dir/AccountSummary.cpp.i
+
+src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/accounts_core.dir/AccountSummary.cpp.s"
+	cd /home/bromastone/code/accounts-manager/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bromastone/code/accounts-manager/src/core/AccountSummary.cpp -o CMakeFiles/accounts_core.dir/AccountSummary.cpp.s
+
 # Object files for target accounts_core
 accounts_core_OBJECTS = \
 "CMakeFiles/accounts_core.dir/accounts_core_autogen/mocs_compilation.cpp.o" \
-"CMakeFiles/accounts_core.dir/Account.cpp.o"
+"CMakeFiles/accounts_core.dir/Account.cpp.o" \
+"CMakeFiles/accounts_core.dir/AccountSummary.cpp.o"
 
 # External object files for target accounts_core
 accounts_core_EXTERNAL_OBJECTS =
 
 src/core/libaccounts_core.a: src/core/CMakeFiles/accounts_core.dir/accounts_core_autogen/mocs_compilation.cpp.o
 src/core/libaccounts_core.a: src/core/CMakeFiles/accounts_core.dir/Account.cpp.o
+src/core/libaccounts_core.a: src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.o
 src/core/libaccounts_core.a: src/core/CMakeFiles/accounts_core.dir/build.make
 src/core/libaccounts_core.a: src/core/CMakeFiles/accounts_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/bromastone/code/accounts-manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libaccounts_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/bromastone/code/accounts-manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libaccounts_core.a"
 	cd /home/bromastone/code/accounts-manager/build/src/core && $(CMAKE_COMMAND) -P CMakeFiles/accounts_core.dir/cmake_clean_target.cmake
 	cd /home/bromastone/code/accounts-manager/build/src/core && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/accounts_core.dir/link.txt --verbose=$(VERBOSE)
 

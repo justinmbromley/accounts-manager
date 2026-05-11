@@ -6,5 +6,5 @@ CXX_DEFINES = -DQT_CORE_LIB -DQT_NO_DEBUG -DQT_TESTCASE_BUILDDIR=\"/home/bromast
 
 CXX_INCLUDES = -I/home/bromastone/code/accounts-manager/build/tests/core/test_account_autogen/include -I/home/bromastone/code/accounts-manager/src/core -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtTest
 
-CXX_FLAGS = -std=gnu++23 -mno-direct-extern-access
+CXX_FLAGS = -std=gnu++20 -mno-direct-extern-access
 

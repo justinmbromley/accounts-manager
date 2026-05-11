@@ -1,2 +1,2 @@
-/usr/bin/ar qc libaccounts_core.a CMakeFiles/accounts_core.dir/accounts_core_autogen/mocs_compilation.cpp.o CMakeFiles/accounts_core.dir/Account.cpp.o
+/usr/bin/ar qc libaccounts_core.a CMakeFiles/accounts_core.dir/accounts_core_autogen/mocs_compilation.cpp.o CMakeFiles/accounts_core.dir/Account.cpp.o CMakeFiles/accounts_core.dir/AccountSummary.cpp.o
 /usr/bin/ranlib libaccounts_core.a

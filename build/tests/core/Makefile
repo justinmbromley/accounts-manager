@@ -141,6 +141,20 @@ test_account/fast:
 .PHONY : test_account/fast
 
 # Convenience name for target.
+tests/core/CMakeFiles/test_account_summary.dir/rule:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/core/CMakeFiles/test_account_summary.dir/rule
+.PHONY : tests/core/CMakeFiles/test_account_summary.dir/rule
+
+# Convenience name for target.
+test_account_summary: tests/core/CMakeFiles/test_account_summary.dir/rule
+.PHONY : test_account_summary
+
+# fast build rule for target.
+test_account_summary/fast:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_summary.dir/build.make tests/core/CMakeFiles/test_account_summary.dir/build
+.PHONY : test_account_summary/fast
+
+# Convenience name for target.
 tests/core/CMakeFiles/test_account_autogen_timestamp_deps.dir/rule:
 	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/core/CMakeFiles/test_account_autogen_timestamp_deps.dir/rule
 .PHONY : tests/core/CMakeFiles/test_account_autogen_timestamp_deps.dir/rule
@@ -167,6 +181,58 @@ test_account_autogen: tests/core/CMakeFiles/test_account_autogen.dir/rule
 test_account_autogen/fast:
 	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_autogen.dir/build.make tests/core/CMakeFiles/test_account_autogen.dir/build
 .PHONY : test_account_autogen/fast
+
+# Convenience name for target.
+tests/core/CMakeFiles/test_account_summary_autogen_timestamp_deps.dir/rule:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/core/CMakeFiles/test_account_summary_autogen_timestamp_deps.dir/rule
+.PHONY : tests/core/CMakeFiles/test_account_summary_autogen_timestamp_deps.dir/rule
+
+# Convenience name for target.
+test_account_summary_autogen_timestamp_deps: tests/core/CMakeFiles/test_account_summary_autogen_timestamp_deps.dir/rule
+.PHONY : test_account_summary_autogen_timestamp_deps
+
+# fast build rule for target.
+test_account_summary_autogen_timestamp_deps/fast:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_summary_autogen_timestamp_deps.dir/build.make tests/core/CMakeFiles/test_account_summary_autogen_timestamp_deps.dir/build
+.PHONY : test_account_summary_autogen_timestamp_deps/fast
+
+# Convenience name for target.
+tests/core/CMakeFiles/test_account_summary_autogen.dir/rule:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/core/CMakeFiles/test_account_summary_autogen.dir/rule
+.PHONY : tests/core/CMakeFiles/test_account_summary_autogen.dir/rule
+
+# Convenience name for target.
+test_account_summary_autogen: tests/core/CMakeFiles/test_account_summary_autogen.dir/rule
+.PHONY : test_account_summary_autogen
+
+# fast build rule for target.
+test_account_summary_autogen/fast:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_summary_autogen.dir/build.make tests/core/CMakeFiles/test_account_summary_autogen.dir/build
+.PHONY : test_account_summary_autogen/fast
+
+account_summary_test.o: account_summary_test.cpp.o
+.PHONY : account_summary_test.o
+
+# target to build an object file
+account_summary_test.cpp.o:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_summary.dir/build.make tests/core/CMakeFiles/test_account_summary.dir/account_summary_test.cpp.o
+.PHONY : account_summary_test.cpp.o
+
+account_summary_test.i: account_summary_test.cpp.i
+.PHONY : account_summary_test.i
+
+# target to preprocess a source file
+account_summary_test.cpp.i:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_summary.dir/build.make tests/core/CMakeFiles/test_account_summary.dir/account_summary_test.cpp.i
+.PHONY : account_summary_test.cpp.i
+
+account_summary_test.s: account_summary_test.cpp.s
+.PHONY : account_summary_test.s
+
+# target to generate assembly for a file
+account_summary_test.cpp.s:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_summary.dir/build.make tests/core/CMakeFiles/test_account_summary.dir/account_summary_test.cpp.s
+.PHONY : account_summary_test.cpp.s
 
 account_test.o: account_test.cpp.o
 .PHONY : account_test.o
@@ -216,6 +282,30 @@ test_account_autogen/mocs_compilation.cpp.s:
 	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account.dir/build.make tests/core/CMakeFiles/test_account.dir/test_account_autogen/mocs_compilation.cpp.s
 .PHONY : test_account_autogen/mocs_compilation.cpp.s
 
+test_account_summary_autogen/mocs_compilation.o: test_account_summary_autogen/mocs_compilation.cpp.o
+.PHONY : test_account_summary_autogen/mocs_compilation.o
+
+# target to build an object file
+test_account_summary_autogen/mocs_compilation.cpp.o:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_summary.dir/build.make tests/core/CMakeFiles/test_account_summary.dir/test_account_summary_autogen/mocs_compilation.cpp.o
+.PHONY : test_account_summary_autogen/mocs_compilation.cpp.o
+
+test_account_summary_autogen/mocs_compilation.i: test_account_summary_autogen/mocs_compilation.cpp.i
+.PHONY : test_account_summary_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+test_account_summary_autogen/mocs_compilation.cpp.i:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_summary.dir/build.make tests/core/CMakeFiles/test_account_summary.dir/test_account_summary_autogen/mocs_compilation.cpp.i
+.PHONY : test_account_summary_autogen/mocs_compilation.cpp.i
+
+test_account_summary_autogen/mocs_compilation.s: test_account_summary_autogen/mocs_compilation.cpp.s
+.PHONY : test_account_summary_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+test_account_summary_autogen/mocs_compilation.cpp.s:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_summary.dir/build.make tests/core/CMakeFiles/test_account_summary.dir/test_account_summary_autogen/mocs_compilation.cpp.s
+.PHONY : test_account_summary_autogen/mocs_compilation.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -227,13 +317,22 @@ help:
 	@echo "... test"
 	@echo "... test_account_autogen"
 	@echo "... test_account_autogen_timestamp_deps"
+	@echo "... test_account_summary_autogen"
+	@echo "... test_account_summary_autogen_timestamp_deps"
 	@echo "... test_account"
+	@echo "... test_account_summary"
+	@echo "... account_summary_test.o"
+	@echo "... account_summary_test.i"
+	@echo "... account_summary_test.s"
 	@echo "... account_test.o"
 	@echo "... account_test.i"
 	@echo "... account_test.s"
 	@echo "... test_account_autogen/mocs_compilation.o"
 	@echo "... test_account_autogen/mocs_compilation.i"
 	@echo "... test_account_autogen/mocs_compilation.s"
+	@echo "... test_account_summary_autogen/mocs_compilation.o"
+	@echo "... test_account_summary_autogen/mocs_compilation.i"
+	@echo "... test_account_summary_autogen/mocs_compilation.s"
 .PHONY : help
 
 

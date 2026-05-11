@@ -166,45 +166,6 @@ accounts_core_autogen/fast:
 .PHONY : accounts_core_autogen/fast
 
 #=============================================================================
-# Target rules for targets named accounts_data
-
-# Build rule for target.
-accounts_data: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 accounts_data
-.PHONY : accounts_data
-
-# fast build rule for target.
-accounts_data/fast:
-	$(MAKE) $(MAKESILENT) -f src/data/CMakeFiles/accounts_data.dir/build.make src/data/CMakeFiles/accounts_data.dir/build
-.PHONY : accounts_data/fast
-
-#=============================================================================
-# Target rules for targets named accounts_data_autogen_timestamp_deps
-
-# Build rule for target.
-accounts_data_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 accounts_data_autogen_timestamp_deps
-.PHONY : accounts_data_autogen_timestamp_deps
-
-# fast build rule for target.
-accounts_data_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f src/data/CMakeFiles/accounts_data_autogen_timestamp_deps.dir/build.make src/data/CMakeFiles/accounts_data_autogen_timestamp_deps.dir/build
-.PHONY : accounts_data_autogen_timestamp_deps/fast
-
-#=============================================================================
-# Target rules for targets named accounts_data_autogen
-
-# Build rule for target.
-accounts_data_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 accounts_data_autogen
-.PHONY : accounts_data_autogen
-
-# fast build rule for target.
-accounts_data_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f src/data/CMakeFiles/accounts_data_autogen.dir/build.make src/data/CMakeFiles/accounts_data_autogen.dir/build
-.PHONY : accounts_data_autogen/fast
-
-#=============================================================================
 # Target rules for targets named test_account
 
 # Build rule for target.
@@ -216,6 +177,19 @@ test_account: cmake_check_build_system
 test_account/fast:
 	$(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account.dir/build.make tests/core/CMakeFiles/test_account.dir/build
 .PHONY : test_account/fast
+
+#=============================================================================
+# Target rules for targets named test_account_summary
+
+# Build rule for target.
+test_account_summary: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_account_summary
+.PHONY : test_account_summary
+
+# fast build rule for target.
+test_account_summary/fast:
+	$(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_summary.dir/build.make tests/core/CMakeFiles/test_account_summary.dir/build
+.PHONY : test_account_summary/fast
 
 #=============================================================================
 # Target rules for targets named test_account_autogen_timestamp_deps
@@ -244,43 +218,30 @@ test_account_autogen/fast:
 .PHONY : test_account_autogen/fast
 
 #=============================================================================
-# Target rules for targets named test_in_memory_account_repository
+# Target rules for targets named test_account_summary_autogen_timestamp_deps
 
 # Build rule for target.
-test_in_memory_account_repository: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_in_memory_account_repository
-.PHONY : test_in_memory_account_repository
+test_account_summary_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_account_summary_autogen_timestamp_deps
+.PHONY : test_account_summary_autogen_timestamp_deps
 
 # fast build rule for target.
-test_in_memory_account_repository/fast:
-	$(MAKE) $(MAKESILENT) -f tests/data/CMakeFiles/test_in_memory_account_repository.dir/build.make tests/data/CMakeFiles/test_in_memory_account_repository.dir/build
-.PHONY : test_in_memory_account_repository/fast
+test_account_summary_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_summary_autogen_timestamp_deps.dir/build.make tests/core/CMakeFiles/test_account_summary_autogen_timestamp_deps.dir/build
+.PHONY : test_account_summary_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named test_in_memory_account_repository_autogen_timestamp_deps
+# Target rules for targets named test_account_summary_autogen
 
 # Build rule for target.
-test_in_memory_account_repository_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_in_memory_account_repository_autogen_timestamp_deps
-.PHONY : test_in_memory_account_repository_autogen_timestamp_deps
+test_account_summary_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_account_summary_autogen
+.PHONY : test_account_summary_autogen
 
 # fast build rule for target.
-test_in_memory_account_repository_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f tests/data/CMakeFiles/test_in_memory_account_repository_autogen_timestamp_deps.dir/build.make tests/data/CMakeFiles/test_in_memory_account_repository_autogen_timestamp_deps.dir/build
-.PHONY : test_in_memory_account_repository_autogen_timestamp_deps/fast
-
-#=============================================================================
-# Target rules for targets named test_in_memory_account_repository_autogen
-
-# Build rule for target.
-test_in_memory_account_repository_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_in_memory_account_repository_autogen
-.PHONY : test_in_memory_account_repository_autogen
-
-# fast build rule for target.
-test_in_memory_account_repository_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f tests/data/CMakeFiles/test_in_memory_account_repository_autogen.dir/build.make tests/data/CMakeFiles/test_in_memory_account_repository_autogen.dir/build
-.PHONY : test_in_memory_account_repository_autogen/fast
+test_account_summary_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f tests/core/CMakeFiles/test_account_summary_autogen.dir/build.make tests/core/CMakeFiles/test_account_summary_autogen.dir/build
+.PHONY : test_account_summary_autogen/fast
 
 # Help Target
 help:
@@ -293,16 +254,13 @@ help:
 	@echo "... test"
 	@echo "... accounts_core_autogen"
 	@echo "... accounts_core_autogen_timestamp_deps"
-	@echo "... accounts_data_autogen"
-	@echo "... accounts_data_autogen_timestamp_deps"
 	@echo "... test_account_autogen"
 	@echo "... test_account_autogen_timestamp_deps"
-	@echo "... test_in_memory_account_repository_autogen"
-	@echo "... test_in_memory_account_repository_autogen_timestamp_deps"
+	@echo "... test_account_summary_autogen"
+	@echo "... test_account_summary_autogen_timestamp_deps"
 	@echo "... accounts_core"
-	@echo "... accounts_data"
 	@echo "... test_account"
-	@echo "... test_in_memory_account_repository"
+	@echo "... test_account_summary"
 .PHONY : help
 
 

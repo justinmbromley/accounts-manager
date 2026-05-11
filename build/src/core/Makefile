@@ -192,6 +192,30 @@ Account.cpp.s:
 	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f src/core/CMakeFiles/accounts_core.dir/build.make src/core/CMakeFiles/accounts_core.dir/Account.cpp.s
 .PHONY : Account.cpp.s
 
+AccountSummary.o: AccountSummary.cpp.o
+.PHONY : AccountSummary.o
+
+# target to build an object file
+AccountSummary.cpp.o:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f src/core/CMakeFiles/accounts_core.dir/build.make src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.o
+.PHONY : AccountSummary.cpp.o
+
+AccountSummary.i: AccountSummary.cpp.i
+.PHONY : AccountSummary.i
+
+# target to preprocess a source file
+AccountSummary.cpp.i:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f src/core/CMakeFiles/accounts_core.dir/build.make src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.i
+.PHONY : AccountSummary.cpp.i
+
+AccountSummary.s: AccountSummary.cpp.s
+.PHONY : AccountSummary.s
+
+# target to generate assembly for a file
+AccountSummary.cpp.s:
+	cd /home/bromastone/code/accounts-manager/build && $(MAKE) $(MAKESILENT) -f src/core/CMakeFiles/accounts_core.dir/build.make src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.s
+.PHONY : AccountSummary.cpp.s
+
 accounts_core_autogen/mocs_compilation.o: accounts_core_autogen/mocs_compilation.cpp.o
 .PHONY : accounts_core_autogen/mocs_compilation.o
 
@@ -231,6 +255,9 @@ help:
 	@echo "... Account.o"
 	@echo "... Account.i"
 	@echo "... Account.s"
+	@echo "... AccountSummary.o"
+	@echo "... AccountSummary.i"
+	@echo "... AccountSummary.s"
 	@echo "... accounts_core_autogen/mocs_compilation.o"
 	@echo "... accounts_core_autogen/mocs_compilation.i"
 	@echo "... accounts_core_autogen/mocs_compilation.s"

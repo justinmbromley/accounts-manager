@@ -6,5 +6,5 @@ CXX_DEFINES = -DQT_CORE_LIB -DQT_NO_DEBUG
 
 CXX_INCLUDES = -I/home/bromastone/code/accounts-manager/build/src/core/accounts_core_autogen/include -I/home/bromastone/code/accounts-manager/src/core -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++
 
-CXX_FLAGS = -std=gnu++23 -mno-direct-extern-access
+CXX_FLAGS = -std=gnu++20 -mno-direct-extern-access
 
