@@ -39,6 +39,9 @@ void AccountTest::create_account_with_credentials_test() {
     };
     core::Account account(name, credentials);
 
+    // Test id is valid
+    QVERIFY(!account.id().isNull());
+
     // Test name
     QCOMPARE(account.name(), name);
 
@@ -53,6 +56,9 @@ void AccountTest::create_account_without_credentials_test() {
     const QString name = "Gmail";
 
     core::Account account(name);
+
+    // Test id is valid
+    QVERIFY(!account.id().isNull());
 
     // Test name
     QCOMPARE(account.name(), name);

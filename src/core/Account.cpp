@@ -6,15 +6,6 @@
 namespace core {
 
 // Constructors
-Account::Account(QString name) :
-    id_(QUuid::createUuid()),
-    name_(std::move(name)),
-    credentials_(),
-    time_created_(QDateTime::currentDateTimeUtc()),
-    time_updated_(time_created_) {
-    Q_ASSERT(!name_.isEmpty());
-}
-
 Account::Account(QString name, std::vector<Credential> credentials) :
     id_(QUuid::createUuid()),
     name_(std::move(name)),
@@ -38,8 +29,8 @@ void Account::update_credentials(const std::vector<Credential>& credentials) {
 }
 
 // Getters
+const QUuid& Account::id() const noexcept { return id_; }
 const QString& Account::name() const noexcept { return name_; }
-
 const std::vector<Credential>& Account::credentials() const noexcept { return credentials_; }
 const QDateTime& Account::created_at() const noexcept { return time_created_; }
 const QDateTime& Account::updated_at() const noexcept { return time_updated_; }
