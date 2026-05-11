@@ -18,7 +18,6 @@ Account::Account(QString name, std::vector<Credential> credentials) :
 // Methods
 void Account::update_name(const QString& name) {
     Q_ASSERT(!name.isEmpty());
-
     name_ = name;
     time_updated_ = QDateTime::currentDateTimeUtc();
 }
