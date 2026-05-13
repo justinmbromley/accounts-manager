@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Account.h"
+#include "AccountErrors.h"
+#include "AccountRepository.h"
 #include "Credential.h"
 
 #include <QString>
@@ -12,22 +14,14 @@
 
 namespace core {
 
-struct AccountSummary {
-    QUuid id;
-    QString name;
-    QDateTime updated_at;
-};
-
-enum class AddAccountError {};
-enum class UpdateAccountError {};
-enum class DeleteAccountError {};
-enum class FindAccountByIdError {};
-
 class AccountService {
 public:
+    // CONSTRUCTOR
+    explicit AccountService(AccountRepository& respository);
+
     // CREATE
-    std::expected<QUuid, AddAccountError> add_account(const QString& name,
-                                                      const std::vector<Credential>& credentials = {});
+    std::expected<QUuid, CreateAccountError> create_account(const QString& name,
+                                                            const std::vector<Credential>& credentials = {});
 
     // RETRIEVE
     std::optional<Account> find_account_by_id(const QUuid& id) const;
@@ -44,6 +38,9 @@ public:
 
     // DELETE
     std::expected<void, DeleteAccountError> delete_account(const QUuid& id);
+
+private:
+    AccountRepository& respository_;
 };
 
 } // namespace core
