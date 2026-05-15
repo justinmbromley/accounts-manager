@@ -12,7 +12,6 @@ target_link_libraries(test_account
 
 add_test(NAME test_account COMMAND test_account)
 
-
 qt_add_executable(test_account_summary
     account_summary_test.cpp
 )

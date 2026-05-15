@@ -9,6 +9,9 @@ add_library(accounts_core
     AccountService.h
     Credential.h
     CredentialType.h
+    AccountRepository.h
+    AccountErrors.h
+    AccountSummary.h
 )
 
 target_link_libraries(accounts_core
