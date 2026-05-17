@@ -62,4 +62,34 @@ std::expected<void, core::CreateAccountError> InMemoryAccountRepository::add(con
     }
 }
 
+return {};
+}
+
+// RETRIEVE
+std::optional<core::Account> InMemoryAccountRepository::find_by_id(const QUuid& id) const {
+    const auto it = std::ranges::find_if(accounts_, [&id](const core::Account& account) { return account.id() == id; });
+
+    if (it == accounts_.cend()) {
+        return std::nullopt;
+    }
+
+    return *it;
+}
+
+std::vector<core::AccountSummary> InMemoryAccountRepository::find_accounts_by_name(const QString& query) const {
+    const auto it = std::ranges::find_if(accounts_, [&query](const core::Account& account) {
+        return account.name().contains(query, Qt::CaseInsensitive);
+    }) return {};
+}
+
+std::vector<core::Account> InMemoryAccountRepository::list() const { return {}; }
+
+// UPDATE
+std::expected<void, core::UpdateAccountError> InMemoryAccountRepository::update(const core::Account& account) {
+    return {};
+}
+
+// DELETE
+std::expected<void, core::DeleteAccountError> InMemoryAccountRepository::remove(const QUuid& id) { return {}; }
+
 } // namespace data

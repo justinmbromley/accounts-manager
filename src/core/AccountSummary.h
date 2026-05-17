@@ -6,8 +6,6 @@
 #include <QString>
 #include <QUuid>
 
-namespace core {
-
 struct AccountSummary {
     QUuid id;
     QString name;

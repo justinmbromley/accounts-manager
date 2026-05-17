@@ -3,7 +3,6 @@
 #include "Credential.h"
 #include "InMemoryAccountRepository.h"
 #include <QtTest/QtTest>
-#include <qtestcase.h>
 
 class InMemoryAccountRepositoryTest : public QObject {
     Q_OBJECT
