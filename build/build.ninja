@@ -144,6 +144,15 @@ build src/core/CMakeFiles/accounts_core.dir/Account.cpp.o: CXX_COMPILER__account
   OBJECT_FILE_DIR = src/core/CMakeFiles/accounts_core.dir
   TARGET_SUPPORT_DIR = src/core/CMakeFiles/accounts_core.dir
 
+build src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.o: CXX_COMPILER__accounts_core_unscanned_ /home/bromastone/code/accounts-manager/src/core/AccountSummary.cpp || cmake_object_order_depends_target_accounts_core
+  DEFINES = -DQT_CORE_LIB -DQT_NO_DEBUG
+  DEP_FILE = src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.o.d
+  FLAGS = -std=gnu++20 -mno-direct-extern-access
+  INCLUDES = -I/home/bromastone/code/accounts-manager/build/src/core/accounts_core_autogen/include -I/home/bromastone/code/accounts-manager/src/core -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++
+  OBJECT_DIR = src/core/CMakeFiles/accounts_core.dir
+  OBJECT_FILE_DIR = src/core/CMakeFiles/accounts_core.dir
+  TARGET_SUPPORT_DIR = src/core/CMakeFiles/accounts_core.dir
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target accounts_core
@@ -152,7 +161,7 @@ build src/core/CMakeFiles/accounts_core.dir/Account.cpp.o: CXX_COMPILER__account
 #############################################
 # Link the static library src/core/libaccounts_core.a
 
-build src/core/libaccounts_core.a: CXX_STATIC_LIBRARY_LINKER__accounts_core_ src/core/CMakeFiles/accounts_core.dir/accounts_core_autogen/mocs_compilation.cpp.o src/core/CMakeFiles/accounts_core.dir/Account.cpp.o || src/core/accounts_core_autogen src/core/accounts_core_autogen_timestamp_deps
+build src/core/libaccounts_core.a: CXX_STATIC_LIBRARY_LINKER__accounts_core_ src/core/CMakeFiles/accounts_core.dir/accounts_core_autogen/mocs_compilation.cpp.o src/core/CMakeFiles/accounts_core.dir/Account.cpp.o src/core/CMakeFiles/accounts_core.dir/AccountSummary.cpp.o || src/core/accounts_core_autogen src/core/accounts_core_autogen_timestamp_deps
   OBJECT_DIR = src/core/CMakeFiles/accounts_core.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -317,6 +326,52 @@ build tests/core/test_account: CXX_EXECUTABLE_LINKER__test_account_ tests/core/C
   TARGET_PDB = test_account.dbg
   TARGET_SUPPORT_DIR = tests/core/CMakeFiles/test_account.dir
 
+# =============================================================================
+# Object build statements for EXECUTABLE target test_account_summary
+
+
+#############################################
+# Order-only phony target for test_account_summary
+
+build cmake_object_order_depends_target_test_account_summary: phony || cmake_object_order_depends_target_accounts_core tests/core/test_account_summary_autogen tests/core/test_account_summary_autogen/mocs_compilation.cpp tests/core/test_account_summary_autogen/timestamp tests/core/test_account_summary_autogen_timestamp_deps
+
+build tests/core/CMakeFiles/test_account_summary.dir/test_account_summary_autogen/mocs_compilation.cpp.o: CXX_COMPILER__test_account_summary_unscanned_ /home/bromastone/code/accounts-manager/build/tests/core/test_account_summary_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_test_account_summary
+  DEFINES = -DQT_CORE_LIB -DQT_NO_DEBUG -DQT_TESTCASE_BUILDDIR=\"/home/bromastone/code/accounts-manager/build/tests/core\" -DQT_TESTCASE_SOURCEDIR=\"/home/bromastone/code/accounts-manager/tests/core\" -DQT_TESTLIB_LIB
+  DEP_FILE = tests/core/CMakeFiles/test_account_summary.dir/test_account_summary_autogen/mocs_compilation.cpp.o.d
+  FLAGS = -std=gnu++20 -mno-direct-extern-access
+  INCLUDES = -I/home/bromastone/code/accounts-manager/build/tests/core/test_account_summary_autogen/include -I/home/bromastone/code/accounts-manager/src/core -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtTest
+  OBJECT_DIR = tests/core/CMakeFiles/test_account_summary.dir
+  OBJECT_FILE_DIR = tests/core/CMakeFiles/test_account_summary.dir/test_account_summary_autogen
+  TARGET_SUPPORT_DIR = tests/core/CMakeFiles/test_account_summary.dir
+
+build tests/core/CMakeFiles/test_account_summary.dir/account_summary_test.cpp.o: CXX_COMPILER__test_account_summary_unscanned_ /home/bromastone/code/accounts-manager/tests/core/account_summary_test.cpp || cmake_object_order_depends_target_test_account_summary
+  DEFINES = -DQT_CORE_LIB -DQT_NO_DEBUG -DQT_TESTCASE_BUILDDIR=\"/home/bromastone/code/accounts-manager/build/tests/core\" -DQT_TESTCASE_SOURCEDIR=\"/home/bromastone/code/accounts-manager/tests/core\" -DQT_TESTLIB_LIB
+  DEP_FILE = tests/core/CMakeFiles/test_account_summary.dir/account_summary_test.cpp.o.d
+  FLAGS = -std=gnu++20 -mno-direct-extern-access
+  INCLUDES = -I/home/bromastone/code/accounts-manager/build/tests/core/test_account_summary_autogen/include -I/home/bromastone/code/accounts-manager/src/core -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtTest
+  OBJECT_DIR = tests/core/CMakeFiles/test_account_summary.dir
+  OBJECT_FILE_DIR = tests/core/CMakeFiles/test_account_summary.dir
+  TARGET_SUPPORT_DIR = tests/core/CMakeFiles/test_account_summary.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_account_summary
+
+
+#############################################
+# Link the executable tests/core/test_account_summary
+
+build tests/core/test_account_summary: CXX_EXECUTABLE_LINKER__test_account_summary_ tests/core/CMakeFiles/test_account_summary.dir/test_account_summary_autogen/mocs_compilation.cpp.o tests/core/CMakeFiles/test_account_summary.dir/account_summary_test.cpp.o | /usr/lib/libQt6Test.so.6.11.0 src/core/libaccounts_core.a /usr/lib/libQt6Core.so.6.11.0 /usr/lib/libQt6Core.so.6.11.0 || src/core/libaccounts_core.a tests/core/test_account_summary_autogen tests/core/test_account_summary_autogen_timestamp_deps
+  DEP_FILE = tests/core/CMakeFiles/test_account_summary.dir/link.d
+  LINK_FLAGS = -Wl,--dependency-file=tests/core/CMakeFiles/test_account_summary.dir/link.d
+  LINK_LIBRARIES = /usr/lib/libQt6Test.so.6.11.0  src/core/libaccounts_core.a  /usr/lib/libQt6Core.so.6.11.0  /usr/lib/libQt6Core.so.6.11.0
+  OBJECT_DIR = tests/core/CMakeFiles/test_account_summary.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = tests/core/test_account_summary
+  TARGET_PDB = test_account_summary.dbg
+  TARGET_SUPPORT_DIR = tests/core/CMakeFiles/test_account_summary.dir
+
 
 #############################################
 # Utility command for test
@@ -367,6 +422,18 @@ build tests/core/test_account_autogen: phony tests/core/CMakeFiles/test_account_
 
 
 #############################################
+# Utility command for test_account_summary_autogen_timestamp_deps
+
+build tests/core/test_account_summary_autogen_timestamp_deps: phony src/core/libaccounts_core.a
+
+
+#############################################
+# Utility command for test_account_summary_autogen
+
+build tests/core/test_account_summary_autogen: phony tests/core/CMakeFiles/test_account_summary_autogen tests/core/test_account_summary_autogen/timestamp tests/core/test_account_summary_autogen/mocs_compilation.cpp tests/core/test_account_summary_autogen_timestamp_deps
+
+
+#############################################
 # Custom command for tests/core/test_account_autogen/timestamp
 
 build tests/core/test_account_autogen/timestamp tests/core/test_account_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}tests/core/test_account_autogen/timestamp ${cmake_ninja_workdir}tests/core/test_account_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /usr/lib/qt6/moc || src/core/accounts_core_autogen src/core/accounts_core_autogen_timestamp_deps src/core/libaccounts_core.a tests/core/test_account_autogen_timestamp_deps
@@ -378,9 +445,26 @@ build tests/core/test_account_autogen/timestamp tests/core/test_account_autogen/
 
 
 #############################################
+# Custom command for tests/core/test_account_summary_autogen/timestamp
+
+build tests/core/test_account_summary_autogen/timestamp tests/core/test_account_summary_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}tests/core/test_account_summary_autogen/timestamp ${cmake_ninja_workdir}tests/core/test_account_summary_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /usr/lib/qt6/moc || src/core/accounts_core_autogen src/core/accounts_core_autogen_timestamp_deps src/core/libaccounts_core.a tests/core/test_account_summary_autogen_timestamp_deps
+  COMMAND = cd /home/bromastone/code/accounts-manager/build/tests/core && /usr/bin/cmake -E cmake_autogen /home/bromastone/code/accounts-manager/build/tests/core/CMakeFiles/test_account_summary_autogen.dir/AutogenInfo.json "" && /usr/bin/cmake -E touch /home/bromastone/code/accounts-manager/build/tests/core/test_account_summary_autogen/timestamp && /usr/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/bromastone/code/accounts-manager /home/bromastone/code/accounts-manager/tests/core /home/bromastone/code/accounts-manager/build /home/bromastone/code/accounts-manager/build/tests/core /home/bromastone/code/accounts-manager/build/tests/core/test_account_summary_autogen/deps /home/bromastone/code/accounts-manager/build/CMakeFiles/d/d19736ae67b07e7dc5ac8fb01ece5549e5d0d35b852501540916fbf76142a034.d
+  DESC = Automatic MOC and UIC for target test_account_summary
+  depfile = CMakeFiles/d/d19736ae67b07e7dc5ac8fb01ece5549e5d0d35b852501540916fbf76142a034.d
+  deps = gcc
+  restat = 1
+
+
+#############################################
 # Phony custom command for tests/core/CMakeFiles/test_account_autogen
 
 build tests/core/CMakeFiles/test_account_autogen | ${cmake_ninja_workdir}tests/core/CMakeFiles/test_account_autogen: phony tests/core/test_account_autogen/timestamp || src/core/accounts_core_autogen src/core/accounts_core_autogen_timestamp_deps src/core/libaccounts_core.a tests/core/test_account_autogen_timestamp_deps
+
+
+#############################################
+# Phony custom command for tests/core/CMakeFiles/test_account_summary_autogen
+
+build tests/core/CMakeFiles/test_account_summary_autogen | ${cmake_ninja_workdir}tests/core/CMakeFiles/test_account_summary_autogen: phony tests/core/test_account_summary_autogen/timestamp || src/core/accounts_core_autogen src/core/accounts_core_autogen_timestamp_deps src/core/libaccounts_core.a tests/core/test_account_summary_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.
@@ -398,6 +482,12 @@ build test_account: phony tests/core/test_account
 build test_account_autogen: phony tests/core/test_account_autogen
 
 build test_account_autogen_timestamp_deps: phony tests/core/test_account_autogen_timestamp_deps
+
+build test_account_summary: phony tests/core/test_account_summary
+
+build test_account_summary_autogen: phony tests/core/test_account_summary_autogen
+
+build test_account_summary_autogen_timestamp_deps: phony tests/core/test_account_summary_autogen_timestamp_deps
 
 # =============================================================================
 # Folder targets.
@@ -435,7 +525,7 @@ build tests/all: phony tests/core/all
 #############################################
 # Folder: /home/bromastone/code/accounts-manager/build/tests/core
 
-build tests/core/all: phony tests/core/test_account
+build tests/core/all: phony tests/core/test_account tests/core/test_account_summary
 
 # =============================================================================
 # Built-in targets

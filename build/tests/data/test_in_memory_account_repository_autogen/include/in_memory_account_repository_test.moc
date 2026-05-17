@@ -1,0 +1,156 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'in_memory_account_repository_test.cpp'
+**
+** Created by: The Qt Meta Object Compiler version 69 (Qt 6.11.0)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include <QtCore/qmetatype.h>
+
+#include <QtCore/qtmochelpers.h>
+
+#include <memory>
+
+
+#include <QtCore/qxptype_traits.h>
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'in_memory_account_repository_test.cpp' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 69
+#error "This file was generated using the moc from 6.11.0. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+#ifndef Q_CONSTINIT
+#define Q_CONSTINIT
+#endif
+
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
+QT_WARNING_DISABLE_GCC("-Wuseless-cast")
+namespace {
+struct qt_meta_tag_ZN29InMemoryAccountRepositoryTestE_t {};
+} // unnamed namespace
+
+template <> constexpr inline auto InMemoryAccountRepositoryTest::qt_create_metaobjectdata<qt_meta_tag_ZN29InMemoryAccountRepositoryTestE_t>()
+{
+    namespace QMC = QtMocConstants;
+    QtMocHelpers::StringRefStorage qt_stringData {
+        "InMemoryAccountRepositoryTest",
+        "dummy",
+        "",
+        "add_account_success_test",
+        "add_account_duplicate_id_fails_test",
+        "find_account_by_id_success_test",
+        "find_account_by_id_not_found_test",
+        "find_accounts_by_name_success_test",
+        "find_accounts_by_name_no_matches_test",
+        "list_accounts_success_test",
+        "list_accounts_empty_test",
+        "update_account_success_test",
+        "update_account_not_found_test",
+        "remove_account_success_test",
+        "remove_account_not_found_test"
+    };
+
+    QtMocHelpers::UintData qt_methods {
+        // Slot 'dummy'
+        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'add_account_success_test'
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'add_account_duplicate_id_fails_test'
+        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'find_account_by_id_success_test'
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'find_account_by_id_not_found_test'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'find_accounts_by_name_success_test'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'find_accounts_by_name_no_matches_test'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'list_accounts_success_test'
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'list_accounts_empty_test'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'update_account_success_test'
+        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'update_account_not_found_test'
+        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'remove_account_success_test'
+        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'remove_account_not_found_test'
+        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
+    };
+    QtMocHelpers::UintData qt_properties {
+    };
+    QtMocHelpers::UintData qt_enums {
+    };
+    return QtMocHelpers::metaObjectData<InMemoryAccountRepositoryTest, qt_meta_tag_ZN29InMemoryAccountRepositoryTestE_t>(QMC::MetaObjectFlag{}, qt_stringData,
+            qt_methods, qt_properties, qt_enums);
+}
+Q_CONSTINIT const QMetaObject InMemoryAccountRepositoryTest::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN29InMemoryAccountRepositoryTestE_t>.stringdata,
+    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN29InMemoryAccountRepositoryTestE_t>.data,
+    qt_static_metacall,
+    nullptr,
+    qt_staticMetaObjectRelocatingContent<qt_meta_tag_ZN29InMemoryAccountRepositoryTestE_t>.metaTypes,
+    nullptr
+} };
+
+void InMemoryAccountRepositoryTest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    auto *_t = static_cast<InMemoryAccountRepositoryTest *>(_o);
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: _t->dummy(); break;
+        case 1: _t->add_account_success_test(); break;
+        case 2: _t->add_account_duplicate_id_fails_test(); break;
+        case 3: _t->find_account_by_id_success_test(); break;
+        case 4: _t->find_account_by_id_not_found_test(); break;
+        case 5: _t->find_accounts_by_name_success_test(); break;
+        case 6: _t->find_accounts_by_name_no_matches_test(); break;
+        case 7: _t->list_accounts_success_test(); break;
+        case 8: _t->list_accounts_empty_test(); break;
+        case 9: _t->update_account_success_test(); break;
+        case 10: _t->update_account_not_found_test(); break;
+        case 11: _t->remove_account_success_test(); break;
+        case 12: _t->remove_account_not_found_test(); break;
+        default: ;
+        }
+    }
+    (void)_a;
+}
+
+const QMetaObject *InMemoryAccountRepositoryTest::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *InMemoryAccountRepositoryTest::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN29InMemoryAccountRepositoryTestE_t>.strings))
+        return static_cast<void*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int InMemoryAccountRepositoryTest::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 13)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 13;
+    }
+    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 13)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 13;
+    }
+    return _id;
+}
+QT_WARNING_POP

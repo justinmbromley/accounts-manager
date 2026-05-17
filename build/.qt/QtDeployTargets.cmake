@@ -2,3 +2,5 @@ set(__QT_DEPLOY_TARGET_accounts_core_FILE /home/bromastone/code/accounts-manager
 set(__QT_DEPLOY_TARGET_accounts_core_TYPE STATIC_LIBRARY)
 set(__QT_DEPLOY_TARGET_test_account_FILE /home/bromastone/code/accounts-manager/build/tests/core/test_account)
 set(__QT_DEPLOY_TARGET_test_account_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_test_account_summary_FILE /home/bromastone/code/accounts-manager/build/tests/core/test_account_summary)
+set(__QT_DEPLOY_TARGET_test_account_summary_TYPE EXECUTABLE)

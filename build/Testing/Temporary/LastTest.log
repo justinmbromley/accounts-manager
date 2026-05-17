@@ -1,10 +1,10 @@
-Start testing: May 12 08:36 AEST
+Start testing: May 17 13:03 AEST
 ----------------------------------------------------------
-1/1 Testing: test_account
-1/1 Test: test_account
+1/2 Testing: test_account
+1/2 Test: test_account
 Command: "/home/bromastone/code/accounts-manager/build/tests/core/test_account"
 Directory: /home/bromastone/code/accounts-manager/build/tests/core
-"test_account" start time: May 12 08:36 AEST
+"test_account" start time: May 17 13:03 AEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of AccountTest *********
@@ -23,8 +23,42 @@ Totals: 8 passed, 0 failed, 0 skipped, 0 blacklisted, 11ms
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"test_account" end time: May 12 08:36 AEST
+"test_account" end time: May 17 13:03 AEST
 "test_account" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: May 12 08:36 AEST
+2/2 Testing: test_account_summary
+2/2 Test: test_account_summary
+Command: "/home/bromastone/code/accounts-manager/build/tests/core/test_account_summary"
+Directory: /home/bromastone/code/accounts-manager/build/tests/core
+"test_account_summary" start time: May 17 13:03 AEST
+Output:
+----------------------------------------------------------
+********* Start testing of AccountSummaryTest *********
+Config: Using QtTest library 6.11.0, Qt 6.11.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.1.1 20260430), arch unknown
+PASS   : AccountSummaryTest::initTestCase()
+FAIL!  : AccountSummaryTest::to_account_summary_copies_basic_fields() Compared values are not the same
+   Actual   (summary.id)  : {00000000-0000-0000-0000-000000000000}
+   Expected (account.id()): {56d355cd-207e-4d92-9735-3649c8ab4562}
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_summary_test.cpp(25)]
+FAIL!  : AccountSummaryTest::to_account_summary_prefers_email_over_username() Compared values are not the same
+   Actual   (summary.identifier)           : ""
+   Expected (QString{"person@example.com"}): "person@example.com"
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_summary_test.cpp(40)]
+FAIL!  : AccountSummaryTest::to_account_summary_uses_username_when_email_missing() Compared values are not the same
+   Actual   (summary.identifier)    : ""
+   Expected (QString{"github_user"}): "github_user"
+   Loc: [/home/bromastone/code/accounts-manager/tests/core/account_summary_test.cpp(52)]
+PASS   : AccountSummaryTest::to_account_summary_identifier_is_empty_when_no_identifier_credentials()
+PASS   : AccountSummaryTest::cleanupTestCase()
+Totals: 3 passed, 3 failed, 0 skipped, 0 blacklisted, 1ms
+********* Finished testing of AccountSummaryTest *********
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"test_account_summary" end time: May 17 13:03 AEST
+"test_account_summary" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 17 13:03 AEST

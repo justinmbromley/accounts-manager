@@ -1,6 +1,8 @@
 accounts_core_autogen/timestamp: \
 	/home/bromastone/code/accounts-manager/src/core/Account.cpp \
 	/home/bromastone/code/accounts-manager/src/core/Account.h \
+	/home/bromastone/code/accounts-manager/src/core/AccountSummary.cpp \
+	/home/bromastone/code/accounts-manager/src/core/AccountSummary.h \
 	/home/bromastone/code/accounts-manager/src/core/CMakeLists.txt \
 	/home/bromastone/code/accounts-manager/src/core/Credential.h \
 	/home/bromastone/code/accounts-manager/src/core/CredentialType.h \
