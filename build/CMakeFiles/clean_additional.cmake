@@ -8,6 +8,9 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "src/core/accounts_core_autogen"
   "tests/core/CMakeFiles/test_account_autogen.dir/AutogenUsed.txt"
   "tests/core/CMakeFiles/test_account_autogen.dir/ParseCache.txt"
+  "tests/core/CMakeFiles/test_account_summary_autogen.dir/AutogenUsed.txt"
+  "tests/core/CMakeFiles/test_account_summary_autogen.dir/ParseCache.txt"
   "tests/core/test_account_autogen"
+  "tests/core/test_account_summary_autogen"
   )
 endif()

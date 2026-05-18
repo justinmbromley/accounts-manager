@@ -108,6 +108,12 @@
 			null
 		],
 		[
+			"/home/bromastone/code/accounts-manager/src/core/AccountSummary.h",
+			"MU",
+			"EWIEGA46WW/moc_AccountSummary.cpp",
+			null
+		],
+		[
 			"/home/bromastone/code/accounts-manager/src/core/Credential.h",
 			"MU",
 			"EWIEGA46WW/moc_Credential.cpp",
@@ -180,6 +186,11 @@
 	[
 		[
 			"/home/bromastone/code/accounts-manager/src/core/Account.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bromastone/code/accounts-manager/src/core/AccountSummary.cpp",
 			"MU",
 			null
 		]

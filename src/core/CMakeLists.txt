@@ -3,6 +3,8 @@ find_package(Qt6 REQUIRED COMPONENTS Core)
 add_library(accounts_core
     Account.cpp
     Account.h
+    AccountSummary.cpp
+    AccountSummary.h
     Credential.h
     CredentialType.h
 )
