@@ -10,14 +10,21 @@ class AccountServiceTest : public QObject {
 
 private slots:
     void create_account_success_test();
+    void create_account_blank_name_fail_test();
+
     void find_account_by_id_success_test();
     void find_account_by_id_not_found_test();
+
     void find_accounts_by_name_success_test();
+
     void list_accounts_success_test();
+
     void update_account_name_success_test();
     void update_account_name_not_found_test();
+
     void update_account_credentials_success_test();
     void update_account_credentials_not_found_test();
+
     void delete_account_success_test();
     void delete_account_not_found_test();
 };
@@ -36,17 +43,33 @@ void AccountServiceTest::create_account_success_test() {
     QCOMPARE(account->name(), QString{"Gmail"});
 }
 
+void AccountServiceTest::create_account_blank_name_fails_test() {
+    data::InMemoryAccountRepository repository{};
+    core::AccountService service{repository};
+
+    const auto result = service.create_account("");
+
+    QVERIFY(!result.has_value());
+    QCOMPARE(result.error(), core::CreateAccountError::EmptyName);
+}
+
 void AccountServiceTest::find_account_by_id_success_test() {
     data::InMemoryAccountRepository repository{};
     core::AccountService service{repository};
 
-    const auto id = service.create_account("GitHub").value();
+    const auto gmail_id = service.create_account("Gmail").value();
+    const auto github_id = service.create_account("GitHub").value();
+    const auto outlook_id = service.create_account("Outlook").value();
 
-    const auto account = service.find_account_by_id(id);
+    const auto account = service.find_account_by_id(github_id);
 
     QVERIFY(account.has_value());
-    QCOMPARE(account->id(), id);
+
+    QCOMPARE(account->id(), github_id);
     QCOMPARE(account->name(), QString{"GitHub"});
+
+    QVERIFY(account->id() != gmail_id);
+    QVERIFY(account->id() != outlook_id);
 }
 
 void AccountServiceTest::find_account_by_id_not_found_test() {
@@ -62,9 +85,14 @@ void AccountServiceTest::find_accounts_by_name_success_test() {
     data::InMemoryAccountRepository repository{};
     core::AccountService service{repository};
 
-    service.create_account("Gmail");
-    const auto github_id = service.create_account("GitHub").value();
-    service.create_account("Outlook");
+    QVERIFY(service.create_account("Gmail").has_value());
+
+    const auto github_result = service.create_account("GitHub");
+    QVERIFY(github_result.has_value());
+
+    QVERIFY(service.create_account("Outlook").has_value());
+
+    const auto github_id = github_result.value();
 
     const auto results = service.find_accounts_by_name("Git");
 
