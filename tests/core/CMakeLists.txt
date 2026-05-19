@@ -12,6 +12,7 @@ target_link_libraries(test_account
 
 add_test(NAME test_account COMMAND test_account)
 
+
 qt_add_executable(test_account_summary
     account_summary_test.cpp
 )
@@ -23,3 +24,17 @@ target_link_libraries(test_account_summary
 )
 
 add_test(NAME test_account_summary COMMAND test_account_summary)
+
+
+qt_add_executable(test_account_service
+    account_service_test.cpp
+)
+
+target_link_libraries(test_account_service
+    PRIVATE
+        Qt6::Test
+        accounts_core
+        accounts_data
+)
+
+add_test(NAME test_account_service COMMAND test_account_service)

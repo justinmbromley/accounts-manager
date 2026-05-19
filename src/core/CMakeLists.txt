@@ -11,7 +11,6 @@ add_library(accounts_core
     CredentialType.h
     AccountRepository.h
     AccountErrors.h
-    AccountSummary.h
 )
 
 target_link_libraries(accounts_core
