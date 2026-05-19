@@ -1,28 +1,11 @@
 #include "Account.h"
 #include "Credential.h"
 #include "CredentialType.h"
-<<<<<<< HEAD
 
 #include <QString>
 #include <QTest>
 
-    // HELPER FUNCTIONS
-    // Helper: compares two credential vectors field-by-field (better failure
-    // messages than operator==)
-    static void compare_credentials(const std::vector<core::Credential>& actual,
-                                    const std::vector<core::Credential>& expected) {
-    QCOMPARE(static_cast<int>(actual.size()), static_cast<int>(expected.size()));
-    for (size_t i = 0; i < expected.size(); ++i) {
-        QCOMPARE(actual[i].type, expected[i].type);
-        QCOMPARE(actual[i].details, expected[i].details);
-    }
-}
-=======
-#include <QtTest/QtTest>
-#include <qtestcase.h>
->>>>>>> 957a229 (Added failing tests for in memory account respository)
-
-    class AccountTest : public QObject {
+class AccountTest : public QObject {
     Q_OBJECT
 
 private slots:
@@ -45,18 +28,10 @@ void AccountTest::create_account_with_credentials_test() {
         {core::CredentialType::SecretQuestion, "What was your mother's maiden name?"},
         {core::CredentialType::SecretAnswer, "Williams"},
     };
-<<<<<<< HEAD
 
     const core::Account account(name, credentials);
 
     QVERIFY(!account.id().isNull());
-    // Test name
-=======
-
-    core::Account account(name, credentials);
-
-    QVERIFY(!account.id().isNull());
->>>>>>> 957a229 (Added failing tests for in memory account respository)
     QCOMPARE(account.name(), name);
     QCOMPARE(account.credentials(), credentials);
 }
@@ -64,15 +39,10 @@ void AccountTest::create_account_with_credentials_test() {
 void AccountTest::create_account_without_credentials_test() {
     const QString name = "Gmail";
 
-    core::Account account(name);
+    const core::Account account(name);
 
-    // Test id is valid
     QVERIFY(!account.id().isNull());
-
-    // Test name
     QCOMPARE(account.name(), name);
-
-    // Test credentials are empty
     QVERIFY(account.credentials().empty());
 }
 
