@@ -105,7 +105,7 @@ void InMemoryAccountRepositoryTest::find_accounts_by_name_success_test() {
     QVERIFY(repository.add(github).has_value());
     QVERIFY(repository.add(outlook).has_value());
 
-    const auto results = repository.find_accounts_by_name("Git");
+    const auto results = repository.find_accounts_by_name("it");
 
     QCOMPARE(results.size(), 1);
     QCOMPARE(results[0].id, github.id());
