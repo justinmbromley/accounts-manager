@@ -9,6 +9,10 @@ AccountService::AccountService(AccountRepository& repository) :
 // CREATE
 std::expected<QUuid, CreateAccountError> AccountService::create_account(const QString& name,
                                                                         const std::vector<Credential>& credentials) {
+    if (name.trimmed().isEmpty()) {
+        return std::unexpected(CreateAccountError::EmptyName);
+    }
+
     Account account{name, credentials};
 
     const auto result = repository_.add(account);
@@ -31,6 +35,10 @@ std::vector<Account> AccountService::list_accounts() const { return repository_.
 
 // UPDATE
 std::expected<void, UpdateAccountError> AccountService::update_account_name(const QUuid& id, const QString& name) {
+    if (name.trimmed().isEmpty()) {
+        return std::unexpected(UpdateAccountError::EmptyName);
+    }
+
     auto account = repository_.find_by_id(id);
 
     if (!account.has_value()) {

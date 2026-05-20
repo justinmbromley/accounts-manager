@@ -10,7 +10,7 @@ class AccountServiceTest : public QObject {
 
 private slots:
     void create_account_success_test();
-    void create_account_blank_name_fail_test();
+    void create_account_blank_name_fails_test();
 
     void find_account_by_id_success_test();
     void find_account_by_id_not_found_test();
@@ -20,6 +20,7 @@ private slots:
     void list_accounts_success_test();
 
     void update_account_name_success_test();
+    void update_account_blank_name_fails_test();
     void update_account_name_not_found_test();
 
     void update_account_credentials_success_test();
@@ -129,6 +130,23 @@ void AccountServiceTest::update_account_name_success_test() {
 
     QVERIFY(account.has_value());
     QCOMPARE(account->name(), QString{"Personal Gmail"});
+}
+
+void AccountServiceTest::update_account_name_blank_name_fails_test() {
+    data::InMemoryAccountRepository repository{};
+    core::AccountService service{repository};
+
+    const auto id = service.create_account("Gmail").value();
+
+    const auto result = service.update_account_name(id, "");
+
+    QVERIFY(!result.has_value());
+    QCOMPARE(result.error(), core::UpdateAccountError::EmptyName);
+
+    const auto account = service.find_account_by_id(id);
+
+    QVERIFY(account.has_value());
+    QCOMPARE(account->name(), QString{"Gmail"});
 }
 
 void AccountServiceTest::update_account_name_not_found_test() {

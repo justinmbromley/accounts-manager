@@ -4,7 +4,7 @@
 namespace core {
 
 enum class CreateAccountError { EmptyName, AlreadyExists, StorageFailure };
-enum class UpdateAccountError { NotFound };
+enum class UpdateAccountError { EmptyName, NotFound };
 enum class DeleteAccountError { NotFound };
 enum class FindAccountByIdError {};
 
