@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/test_account.dir/link.d CMakeFiles/test_account.dir/test_account_autogen/mocs_compilation.cpp.o CMakeFiles/test_account.dir/account_test.cpp.o -o test_account  /usr/lib/libQt6Test.so.6.11.0 ../../src/core/libaccounts_core.a /usr/lib/libQt6Core.so.6.11.0 /usr/lib/libQt6Core.so.6.11.0
