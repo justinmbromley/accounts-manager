@@ -17,7 +17,7 @@ namespace core {
 class AccountService {
 public:
     // CONSTRUCTOR
-    explicit AccountService(AccountRepository& respository);
+    explicit AccountService(AccountRepository& repository);
 
     // CREATE
     std::expected<QUuid, CreateAccountError> create_account(const QString& name,
@@ -40,7 +40,7 @@ public:
     std::expected<void, DeleteAccountError> delete_account(const QUuid& id);
 
 private:
-    AccountRepository& respository_;
+    AccountRepository& repository_;
 };
 
 } // namespace core
