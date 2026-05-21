@@ -1,7 +1,10 @@
-// AccountSummary.h
 #pragma once
 
 #include "Account.h"
+
+#include <QDateTime>
+#include <QString>
+#include <QUuid>
 
 namespace core {
 
