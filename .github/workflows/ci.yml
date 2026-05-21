@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt install -y cmake g++ ninja-build
+          sudo apt install -y cmake g++ ninja-build qt6-base-dev
 
       - name: Configure CMake
         run: cmake -S . -B build -G Ninja
