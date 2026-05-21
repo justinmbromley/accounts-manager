@@ -132,7 +132,7 @@ void AccountServiceTest::update_account_name_success_test() {
     QCOMPARE(account->name(), QString{"Personal Gmail"});
 }
 
-void AccountServiceTest::update_account_name_blank_name_fails_test() {
+void AccountServiceTest::update_account_blank_name_fails_test() {
     data::InMemoryAccountRepository repository{};
     core::AccountService service{repository};
 
