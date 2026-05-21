@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-build/
-=======
 # Build directories
 build/
 
@@ -28,4 +25,3 @@ CTestTestfile.cmake
 # Neovim swap
 *.swp
 *.swo
->>>>>>> 5d523ca (Created the core functions for Account service)
