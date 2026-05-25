@@ -8,6 +8,7 @@ add_library(accounts_core
     AccountService.cpp
     AccountService.h
     Credential.h
+    CredentialType.cpp
     CredentialType.h
     AccountRepository.h
     AccountErrors.h
