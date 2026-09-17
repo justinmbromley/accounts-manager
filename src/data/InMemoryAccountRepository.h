@@ -1,6 +1,7 @@
 #pragma once
 
 #include "AccountRepository.h"
+#include "ids/EntityIds.h"
 
 namespace data {
 
@@ -10,7 +11,7 @@ public:
     std::expected<void, core::CreateAccountError> add(const core::Account& account) override;
 
     // RETRIEVE
-    std::optional<core::Account> find_by_id(const QUuid& id) const override;
+    std::optional<core::Account> find_by_id(const core::AccountId& id) const override;
     std::vector<core::AccountSummary> find_accounts_by_name(const QString& query) const override;
     std::vector<core::Account> list() const override;
 
@@ -18,7 +19,7 @@ public:
     std::expected<void, core::UpdateAccountError> update(const core::Account& account) override;
 
     // DELETE
-    std::expected<void, core::DeleteAccountError> remove(const QUuid& id) override;
+    std::expected<void, core::DeleteAccountError> remove(const core::AccountId& id) override;
 
 private:
     std::vector<core::Account> accounts_;

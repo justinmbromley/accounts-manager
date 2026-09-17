@@ -35,12 +35,12 @@ void InMemoryAccountRepositoryTest::add_account_success_test() {
     const QString name = "Gmail";
 
     const std::vector<core::Credential> credentials{
-        {core::CredentialType::Email, "jfitzgerald1998@gmail.com"},
-        {core::CredentialType::Password, "theSWAGLord()!!"},
+        core::Credential{core::CredentialType::Email, "jfitzgerald1998@gmail.com"},
+        core::Credential{core::CredentialType::Password, "theSWAGLord()!!"},
     };
 
     // Creating account
-    const core::Account account(name, credentials);
+    const core::Account account{name, credentials};
 
     // Creating repository
     data::InMemoryAccountRepository repository{};
@@ -60,7 +60,7 @@ void InMemoryAccountRepositoryTest::add_account_success_test() {
 void InMemoryAccountRepositoryTest::add_account_duplicate_id_fails_test() {
     data::InMemoryAccountRepository repository{};
 
-    const core::Account account("Gmail");
+    const core::Account account{"Gmail"};
 
     QVERIFY(repository.add(account).has_value());
 
@@ -73,8 +73,8 @@ void InMemoryAccountRepositoryTest::add_account_duplicate_id_fails_test() {
 void InMemoryAccountRepositoryTest::find_account_by_id_success_test() {
     data::InMemoryAccountRepository repository{};
 
-    const core::Account account_1("Gmail", {});
-    const core::Account account_2("GitHub", {});
+    const core::Account account_1{"Gmail", {}};
+    const core::Account account_2{"GitHub", {}};
 
     QVERIFY(repository.add(account_1).has_value());
     QVERIFY(repository.add(account_2).has_value());
@@ -89,7 +89,7 @@ void InMemoryAccountRepositoryTest::find_account_by_id_success_test() {
 void InMemoryAccountRepositoryTest::find_account_by_id_not_found_test() {
     data::InMemoryAccountRepository repository{};
 
-    const auto found_account = repository.find_by_id(QUuid::createUuid());
+    const auto found_account = repository.find_by_id(core::AccountId{});
 
     QVERIFY(!found_account.has_value());
 }
@@ -97,9 +97,9 @@ void InMemoryAccountRepositoryTest::find_account_by_id_not_found_test() {
 void InMemoryAccountRepositoryTest::find_accounts_by_name_success_test() {
     data::InMemoryAccountRepository repository{};
 
-    const core::Account gmail("Gmail");
-    const core::Account github("GitHub");
-    const core::Account outlook("Outlook");
+    const core::Account gmail{"Gmail"};
+    const core::Account github{"GitHub"};
+    const core::Account outlook{"Outlook"};
 
     QVERIFY(repository.add(gmail).has_value());
     QVERIFY(repository.add(github).has_value());
@@ -115,8 +115,8 @@ void InMemoryAccountRepositoryTest::find_accounts_by_name_success_test() {
 void InMemoryAccountRepositoryTest::find_accounts_by_name_no_matches_test() {
     data::InMemoryAccountRepository repository{};
 
-    QVERIFY(repository.add(core::Account("Gmail")).has_value());
-    QVERIFY(repository.add(core::Account("GitHub")).has_value());
+    QVERIFY(repository.add(core::Account{"Gmail"}).has_value());
+    QVERIFY(repository.add(core::Account{"GitHub"}).has_value());
 
     const auto results = repository.find_accounts_by_name("Outlook");
 
@@ -126,8 +126,8 @@ void InMemoryAccountRepositoryTest::find_accounts_by_name_no_matches_test() {
 void InMemoryAccountRepositoryTest::list_accounts_success_test() {
     data::InMemoryAccountRepository repository{};
 
-    const core::Account gmail("Gmail");
-    const core::Account github("GitHub");
+    const core::Account gmail{"Gmail"};
+    const core::Account github{"GitHub"};
 
     QVERIFY(repository.add(gmail).has_value());
     QVERIFY(repository.add(github).has_value());
@@ -150,17 +150,17 @@ void InMemoryAccountRepositoryTest::list_accounts_empty_test() {
 void InMemoryAccountRepositoryTest::update_account_success_test() {
     data::InMemoryAccountRepository repository{};
 
-    core::Account account("Gmail");
+    core::Account account{"Gmail"};
 
     QVERIFY(repository.add(account).has_value());
 
-    const std::vector<core::Credential> updated_credentials{
-        {core::CredentialType::Email, "user@example.com"},
-        {core::CredentialType::Password, "password"},
-    };
+    const core::Credential email{core::CredentialType::Email, "user@example.com"};
+
+    const core::Credential password{core::CredentialType::Password, "password"};
 
     account.update_name("Personal Gmail");
-    account.update_credentials(updated_credentials);
+    account.add_credential(email);
+    account.add_credential(password);
 
     const auto result = repository.update(account);
 
@@ -170,13 +170,15 @@ void InMemoryAccountRepositoryTest::update_account_success_test() {
 
     QVERIFY(found_account.has_value());
     QCOMPARE(found_account->name(), "Personal Gmail");
-    QCOMPARE(found_account->credentials(), updated_credentials);
+    QCOMPARE(found_account->credentials().size(), std::size_t{2});
+    QCOMPARE(found_account->credentials().at(0), email);
+    QCOMPARE(found_account->credentials().at(1), password);
 }
 
 void InMemoryAccountRepositoryTest::update_account_not_found_test() {
     data::InMemoryAccountRepository repository{};
 
-    const core::Account account("Gmail");
+    const core::Account account{"Gmail"};
 
     const auto result = repository.update(account);
 
@@ -187,7 +189,7 @@ void InMemoryAccountRepositoryTest::update_account_not_found_test() {
 void InMemoryAccountRepositoryTest::remove_account_success_test() {
     data::InMemoryAccountRepository repository{};
 
-    const core::Account account("Gmail");
+    const core::Account account{"Gmail"};
 
     QVERIFY(repository.add(account).has_value());
 
@@ -203,7 +205,7 @@ void InMemoryAccountRepositoryTest::remove_account_success_test() {
 void InMemoryAccountRepositoryTest::remove_account_not_found_test() {
     data::InMemoryAccountRepository repository{};
 
-    const auto result = repository.remove(QUuid::createUuid());
+    const auto result = repository.remove(core::AccountId{});
 
     QVERIFY(!result.has_value());
     QCOMPARE(result.error(), core::DeleteAccountError::NotFound);

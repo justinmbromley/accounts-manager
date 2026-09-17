@@ -8,3 +8,4 @@ PointerAlignment: Left
 ReferenceAlignment: Left
 BreakConstructorInitializers: AfterColon
 PackConstructorInitializers: Never
+AllowShortEnumsOnASingleLine: false

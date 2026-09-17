@@ -1,7 +1,5 @@
 #include <QtTest>
 
-#include <QtTest>
-
 #include "Account.h"
 #include "AccountSummary.h"
 #include "Credential.h"
@@ -28,10 +26,10 @@ void AccountSummaryTest::to_account_summary_copies_basic_fields() {
 }
 
 void AccountSummaryTest::to_account_summary_prefers_email_over_username() {
-    const std::vector<core::Credential> credentials{
-        {core::CredentialType::Username, "github_user"},
-        {core::CredentialType::Email, "person@example.com"},
-    };
+    const core::Credential email{core::CredentialType::Email, "person@example.com"};
+    const core::Credential username{core::CredentialType::Username, "github_user"};
+
+    const std::vector<core::Credential> credentials{email, username};
 
     const core::Account account{"GitHub", credentials};
 
@@ -42,7 +40,7 @@ void AccountSummaryTest::to_account_summary_prefers_email_over_username() {
 
 void AccountSummaryTest::to_account_summary_uses_username_when_email_missing() {
     const std::vector<core::Credential> credentials{
-        {core::CredentialType::Username, "github_user"},
+        core::Credential{core::CredentialType::Username, QString{"github_user"}},
     };
 
     const core::Account account{"GitHub", credentials};
@@ -54,7 +52,7 @@ void AccountSummaryTest::to_account_summary_uses_username_when_email_missing() {
 
 void AccountSummaryTest::to_account_summary_identifier_is_empty_when_no_identifier_credentials() {
     const std::vector<core::Credential> credentials{
-        {core::CredentialType::None, "some value"},
+        core::Credential{core::CredentialType::Password, QString{"password123"}},
     };
 
     const core::Account account{"GitHub", credentials};

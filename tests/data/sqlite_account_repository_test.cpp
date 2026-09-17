@@ -80,10 +80,11 @@ void SqliteAccountRepositoryTest::cleanup() {
 void SqliteAccountRepositoryTest::add_account_success_test() {
     data::SqliteAccountRepository repository{db_};
 
-    const core::Account account("Gmail", {
-                                             {core::CredentialType::Email, "example@gmail.com"},
-                                             {core::CredentialType::Password, "password123"},
-                                         });
+    const core::Account account{"Gmail",
+                                {
+                                    {core::CredentialType::Email, "example@gmail.com"},
+                                    {core::CredentialType::Password, "password123"},
+                                }};
 
     const auto result = repository.add(account);
 
@@ -139,10 +140,11 @@ void SqliteAccountRepositoryTest::add_account_success_test() {
 void SqliteAccountRepositoryTest::add_account_duplicate_id_fails_test() {
     data::SqliteAccountRepository repository{db_};
 
-    const core::Account account("Gmail", {
-                                             {core::CredentialType::Email, "example@gmail.com"},
-                                             {core::CredentialType::Password, "password123"},
-                                         });
+    const core::Account account{"Gmail",
+                                {
+                                    {core::CredentialType::Email, "example@gmail.com"},
+                                    {core::CredentialType::Password, "password123"},
+                                }};
 
     const auto result_1 = repository.add(account);
 
@@ -156,16 +158,18 @@ void SqliteAccountRepositoryTest::add_account_duplicate_id_fails_test() {
 void SqliteAccountRepositoryTest::find_account_by_id_success_test() {
     data::SqliteAccountRepository repository{db_};
 
-    const core::Account account_1("Gmail", {
-                                               {core::CredentialType::Email, "example@gmail.com"},
-                                               {core::CredentialType::Password, "password123"},
-                                           });
+    const core::Account account_1{"Gmail",
+                                  {
+                                      {core::CredentialType::Email, "example@gmail.com"},
+                                      {core::CredentialType::Password, "password123"},
+                                  }};
 
-    const core::Account account_2("Outlook", {
-                                                 {core::CredentialType::Email, "example@outlook.com"},
-                                                 {core::CredentialType::Password, "password321"},
-                                                 {core::CredentialType::PhoneNumber, "0535345834"},
-                                             });
+    const core::Account account_2{"Outlook",
+                                  {
+                                      {core::CredentialType::Email, "example@outlook.com"},
+                                      {core::CredentialType::Password, "password321"},
+                                      {core::CredentialType::PhoneNumber, "0535345834"},
+                                  }};
 
     // Setup DB state with raw SQL
     QSqlQuery query(db_);
@@ -220,24 +224,26 @@ void SqliteAccountRepositoryTest::find_account_by_id_not_found_test() {
 void SqliteAccountRepositoryTest::find_accounts_by_name_success_test() {
     data::SqliteAccountRepository repository{db_};
 
-    const core::Account account_1("Gmail", {
-                                               {core::CredentialType::Email, "example@gmail.com"},
-                                               {core::CredentialType::Password, "password123"},
-                                           });
+    const core::Account account_1{"Gmail",
+                                  {
+                                      {core::CredentialType::Email, "example@gmail.com"},
+                                      {core::CredentialType::Password, "password123"},
+                                  }};
 
-    const core::Account account_2("Outlook", {
-                                                 {core::CredentialType::Email, "example@outlook.com"},
-                                                 {core::CredentialType::Password, "password321"},
-                                                 {core::CredentialType::PhoneNumber, "0535345834"},
-                                             });
+    const core::Account account_2{"Outlook",
+                                  {
+                                      {core::CredentialType::Email, "example@outlook.com"},
+                                      {core::CredentialType::Password, "password321"},
+                                      {core::CredentialType::PhoneNumber, "0535345834"},
+                                  }};
 
-    const core::Account account_3("Gmail",
+    const core::Account account_3{"Gmail",
                                   {
                                       {core::CredentialType::Email, .details = "example2@gmail.com"},
                                       {core::CredentialType::Password, "password123"},
                                       {core::CredentialType::SecretQuestion, "What was your mother's maiden name?"},
                                       {core::CredentialType::SecretAnswer, "Williams"},
-                                  });
+                                  }};
 
     // Setup DB state with raw SQL
     QSqlQuery query(db_);

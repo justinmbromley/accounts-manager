@@ -1,10 +1,11 @@
 #pragma once
 
 #include "Credential.h"
+#include "ids/EntityIds.h"
 
 #include <QDateTime>
 #include <QString>
-#include <QUuid>
+#include <optional>
 #include <vector>
 
 namespace core {
@@ -16,10 +17,15 @@ public:
 
     // Methods
     void update_name(const QString& name);
-    void update_credentials(const std::vector<Credential>& credentials);
+
+    // Credential methods
+    void add_credential(Credential credential);
+    bool update_credential(const CredentialId& credential_id, const Credential& updated_credential);
+    bool remove_credential(const CredentialId& credential_id);
+    std::optional<Credential> find_credential(const CredentialId& credential_id) const;
 
     // Getters
-    const QUuid& id() const noexcept;
+    const AccountId& id() const noexcept;
     const QString& name() const noexcept;
     const std::vector<Credential>& credentials() const noexcept;
     const QDateTime& created_at() const noexcept;
@@ -28,7 +34,7 @@ public:
 private:
     void touch() noexcept;
 
-    QUuid id_;
+    AccountId id_;
     QString name_;
     std::vector<Credential> credentials_;
     QDateTime time_created_;

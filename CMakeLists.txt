@@ -5,7 +5,8 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Qt automation (VERY IMPORTANT)
+# set(CMAKE_CXX_CLANG_TIDY clang-tidy)
+
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
@@ -14,4 +15,3 @@ enable_testing()
 
 add_subdirectory(src)
 add_subdirectory(tests)
-

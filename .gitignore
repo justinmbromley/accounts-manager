@@ -25,3 +25,4 @@ CTestTestfile.cmake
 # Neovim swap
 *.swp
 *.swo
+build-coverage/

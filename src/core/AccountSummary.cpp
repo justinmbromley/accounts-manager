@@ -7,14 +7,18 @@ namespace {
 
 QString identifier_from(const std::vector<core::Credential>& credentials) {
     for (const auto& credential : credentials) {
-        if (credential.type == core::CredentialType::Email) {
-            return credential.details;
+        if (credential.type == core::CredentialType::Email &&
+            std::holds_alternative<QString>(credential.value)) {
+
+            return std::get<QString>(credential.value);
         }
     }
 
     for (const auto& credential : credentials) {
-        if (credential.type == core::CredentialType::Username) {
-            return credential.details;
+        if (credential.type == core::CredentialType::Username &&
+            std::holds_alternative<QString>(credential.value)) {
+
+            return std::get<QString>(credential.value);
         }
     }
 

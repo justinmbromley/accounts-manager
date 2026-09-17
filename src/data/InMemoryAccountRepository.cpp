@@ -14,7 +14,7 @@ std::expected<void, core::CreateAccountError> InMemoryAccountRepository::add(con
 }
 
 // RETRIEVE
-std::optional<core::Account> InMemoryAccountRepository::find_by_id(const QUuid& id) const {
+std::optional<core::Account> InMemoryAccountRepository::find_by_id(const core::AccountId& id) const {
     const auto it = std::ranges::find_if(accounts_, [&id](const core::Account& account) { return account.id() == id; });
 
     if (it == accounts_.cend()) {
@@ -51,7 +51,7 @@ std::expected<void, core::UpdateAccountError> InMemoryAccountRepository::update(
 }
 
 // DELETE
-std::expected<void, core::DeleteAccountError> InMemoryAccountRepository::remove(const QUuid& id) {
+std::expected<void, core::DeleteAccountError> InMemoryAccountRepository::remove(const core::AccountId& id) {
     for (auto it = accounts_.begin(); it != accounts_.end(); ++it) {
         if (it->id() == id) {
             accounts_.erase(it);
