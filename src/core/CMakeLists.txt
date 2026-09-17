@@ -10,8 +10,11 @@ add_library(accounts_core
     Credential.h
     CredentialType.cpp
     CredentialType.h
+    CredentialValidator.cpp
+    CredentialValidator.h
     AccountRepository.h
     AccountErrors.h
+    ids/EntityIds.h
 )
 
 target_link_libraries(accounts_core

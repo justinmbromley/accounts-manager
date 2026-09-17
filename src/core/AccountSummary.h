@@ -1,15 +1,15 @@
 #pragma once
 
 #include "Account.h"
+#include "ids/EntityIds.h"
 
 #include <QDateTime>
 #include <QString>
-#include <QUuid>
 
 namespace core {
 
 struct AccountSummary {
-    QUuid id;
+    AccountId id;
     QString name;
     QString identifier;
     QDateTime updated_at;

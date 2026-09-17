@@ -18,11 +18,8 @@ QString credential_type_to_string(CredentialType type) {
     case CredentialType::Password:
         return "PASSWORD";
 
-    case CredentialType::SecretQuestion:
-        return "SECRET_QUESTION";
-
-    case CredentialType::SecretAnswer:
-        return "SECRET_ANSWER";
+    case CredentialType::SecretQA:
+        return "SECRET_QA";
 
     case CredentialType::RecoveryPhrase:
         return "RECOVERY_PHRASE";
@@ -54,11 +51,8 @@ CredentialType credential_type_from_string(const QString& value) {
     if (value == "PASSWORD")
         return CredentialType::Password;
 
-    if (value == "SECRET_QUESTION")
-        return CredentialType::SecretQuestion;
-
-    if (value == "SECRET_ANSWER")
-        return CredentialType::SecretAnswer;
+    if (value == "SECRET_QA")
+        return CredentialType::SecretQA;
 
     if (value == "RECOVERY_PHRASE")
         return CredentialType::RecoveryPhrase;

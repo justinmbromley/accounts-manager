@@ -1,13 +1,12 @@
 #include "Account.h"
 
 #include <QDateTime>
-#include <QUuid>
 
 namespace core {
 
-// Constructors
+// CONSTRUCTORS
 Account::Account(QString name, std::vector<Credential> credentials) :
-    id_(QUuid::createUuid()),
+    id_(),
     name_(std::move(name)),
     credentials_(std::move(credentials)),
     time_created_(QDateTime::currentDateTimeUtc()),
@@ -15,20 +14,59 @@ Account::Account(QString name, std::vector<Credential> credentials) :
     Q_ASSERT(!name_.isEmpty());
 }
 
-// Methods
+// METHODS
 void Account::update_name(const QString& name) {
     Q_ASSERT(!name.isEmpty());
+
     name_ = name;
-    time_updated_ = QDateTime::currentDateTimeUtc();
+    touch();
 }
 
-void Account::update_credentials(const std::vector<Credential>& credentials) {
-    credentials_ = credentials;
-    time_updated_ = QDateTime::currentDateTimeUtc();
+// CREDENTIAL METHODS
+void Account::add_credential(Credential credential) {
+    credentials_.push_back(std::move(credential));
+    touch();
 }
 
-// Getters
-const QUuid& Account::id() const noexcept { return id_; }
+bool Account::update_credential(const CredentialId& credential_id, const Credential& updated_credential) {
+    for (auto& credential : credentials_) {
+        if (credential.id == credential_id) {
+            credential = updated_credential;
+            touch();
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool Account::remove_credential(const CredentialId& credential_id) {
+    for (auto it = credentials_.begin(); it != credentials_.end(); ++it) {
+        if (it->id == credential_id) {
+            credentials_.erase(it);
+            touch();
+            return true;
+        }
+    }
+
+    return false;
+}
+
+std::optional<Credential> Account::find_credential(const CredentialId& credential_id) const {
+    for (const auto& credential : credentials_) {
+        if (credential.id == credential_id) {
+            return credential;
+        }
+    }
+
+    return std::nullopt;
+}
+
+// PRIVATE METHODS
+void Account::touch() noexcept { time_updated_ = QDateTime::currentDateTimeUtc(); }
+
+// GETTERS
+const AccountId& Account::id() const noexcept { return id_; }
 const QString& Account::name() const noexcept { return name_; }
 const std::vector<Credential>& Account::credentials() const noexcept { return credentials_; }
 const QDateTime& Account::created_at() const noexcept { return time_created_; }

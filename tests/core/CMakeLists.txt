@@ -56,4 +56,17 @@ target_link_libraries(test_credential_type
 
 add_test(NAME test_credential_type COMMAND test_credential_type)
 
+# Credential Validation
+qt_add_executable(test_credential_validator
+    credential_validator_test.cpp
+)
+
+target_link_libraries(test_credential_validator
+    PRIVATE
+        Qt6::Test
+        accounts_core
+)
+
+add_test(NAME test_credential_validator COMMAND test_credential_validator)
+
 
