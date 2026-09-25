@@ -25,9 +25,11 @@ Account::Account(AccountId id, QString name, std::vector<Credential> credentials
 }
 
 // ACCOUNT RESTORATION
-Account Account::restore(AccountId id, QString name, std::vector<Credential> credentials, QDateTime time_created,
+Account Account::restore(AccountId id, QString name, std::vector<Credential> credentials, QDateTime created_at,
                          QDateTime updated_at) {
-    return core::Account{name, credentials};
+
+    return Account{std::move(id), std::move(name), std::move(credentials), std::move(created_at),
+                   std::move(updated_at)};
 }
 
 // METHODS
