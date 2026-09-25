@@ -3,9 +3,9 @@
 #include "CredentialType.h"
 #include "ids/EntityIds.h"
 
+#include <QDateTime>
 #include <QString>
 #include <QTest>
-#include <qtestcase.h>
 #include <vector>
 
 class AccountTest : public QObject {
@@ -15,6 +15,9 @@ private slots:
     void create_account_with_credentials_test();
     void create_account_without_credentials_test();
     void create_account_time_test();
+
+    void restore_account_test();
+
     void update_name_test();
 
     void add_credential_test();
@@ -62,19 +65,44 @@ void AccountTest::create_account_time_test() {
     QCOMPARE(account.created_at(), account.updated_at());
 }
 
+void AccountTest::restore_account_test() {
+    const core::AccountId id = core::AccountId();
+    const QString name = "Gmail";
+
+    const std::vector<core::Credential> credentials{
+        core::Credential{core::CredentialType::Email, "jfitzgerald1998@gmail.com"},
+        core::Credential{core::CredentialType::Password, "theSWAGLord()!!"},
+        core::Credential{core::CredentialType::SecretQA, core::SecretQA{"What is your favorite color?", "Blue"}},
+    };
+
+    const QDateTime created_at(QDate(2025, 8, 23), QTime(8, 54, 0));
+    const QDateTime updated_at(QDate(2026, 9, 2), QTime(13, 20, 42));
+
+    const auto gmail = core::Account::restore(id, name, credentials, created_at, updated_at);
+
+    // Compare if it's restored or not
+    QVERIFY(gmail.id().is_valid());
+
+    QCOMPARE(gmail.id(), id);
+    QCOMPARE(gmail.name(), name);
+    QCOMPARE(gmail.credentials(), credentials);
+    QCOMPARE(gmail.created_at(), created_at);
+    QCOMPARE(gmail.updated_at(), updated_at);
+}
+
 void AccountTest::update_name_test() {
     const QString name = "Gmail";
     const QString new_name = "Google Mail";
 
     core::Account account{"Gmail"};
 
-    const auto time_created = account.updated_at();
+    const auto created_at = account.updated_at();
 
     QTest::qWait(5);
     account.update_name(new_name);
 
     QCOMPARE(account.name(), new_name);
-    QVERIFY(account.updated_at() > time_created);
+    QVERIFY(account.updated_at() > created_at);
 }
 
 void AccountTest::add_credential_test() {

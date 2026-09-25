@@ -9,9 +9,27 @@ Account::Account(QString name, std::vector<Credential> credentials) :
     id_(),
     name_(std::move(name)),
     credentials_(std::move(credentials)),
-    time_created_(QDateTime::currentDateTimeUtc()),
-    time_updated_(time_created_) {
+    created_at_(QDateTime::currentDateTimeUtc()),
+    updated_at_(created_at_) {
     Q_ASSERT(!name_.isEmpty());
+}
+
+Account::Account(AccountId id, QString name, std::vector<Credential> credentials, QDateTime created_at,
+                 QDateTime updated_at) :
+    id_(std::move(id)),
+    name_(std::move(name)),
+    credentials_(std::move(credentials)),
+    created_at_(std::move(created_at)),
+    updated_at_(std::move(updated_at)) {
+    Q_ASSERT(!name_.isEmpty());
+}
+
+// ACCOUNT RESTORATION
+Account Account::restore(AccountId id, QString name, std::vector<Credential> credentials, QDateTime created_at,
+                         QDateTime updated_at) {
+
+    return Account{std::move(id), std::move(name), std::move(credentials), std::move(created_at),
+                   std::move(updated_at)};
 }
 
 // METHODS
@@ -63,13 +81,13 @@ std::optional<Credential> Account::find_credential(const CredentialId& credentia
 }
 
 // PRIVATE METHODS
-void Account::touch() noexcept { time_updated_ = QDateTime::currentDateTimeUtc(); }
+void Account::touch() noexcept { updated_at_ = QDateTime::currentDateTimeUtc(); }
 
 // GETTERS
 const AccountId& Account::id() const noexcept { return id_; }
 const QString& Account::name() const noexcept { return name_; }
 const std::vector<Credential>& Account::credentials() const noexcept { return credentials_; }
-const QDateTime& Account::created_at() const noexcept { return time_created_; }
-const QDateTime& Account::updated_at() const noexcept { return time_updated_; }
+const QDateTime& Account::created_at() const noexcept { return created_at_; }
+const QDateTime& Account::updated_at() const noexcept { return updated_at_; }
 
 } // namespace core

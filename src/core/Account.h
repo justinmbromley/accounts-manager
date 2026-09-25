@@ -6,6 +6,7 @@
 #include <QDateTime>
 #include <QString>
 #include <optional>
+#include <qdatetime.h>
 #include <vector>
 
 namespace core {
@@ -14,6 +15,10 @@ class Account {
 public:
     // Constructors
     explicit Account(QString name, std::vector<Credential> credentials = {});
+
+    // Restoring an account
+    static Account restore(AccountId id, QString name, std::vector<Credential> credentials, QDateTime created_at,
+                           QDateTime updated_at);
 
     // Methods
     void update_name(const QString& name);
@@ -32,13 +37,16 @@ public:
     const QDateTime& updated_at() const noexcept;
 
 private:
+    Account(AccountId id, QString name, std::vector<Credential> credentials, QDateTime created_at,
+            QDateTime updated_at);
+
     void touch() noexcept;
 
     AccountId id_;
     QString name_;
     std::vector<Credential> credentials_;
-    QDateTime time_created_;
-    QDateTime time_updated_;
+    QDateTime created_at_;
+    QDateTime updated_at_;
 };
 
 } // namespace core
